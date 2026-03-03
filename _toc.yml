@@ -1,0 +1,7 @@
+format: jb-book
+root: index
+
+chapters:
+  - file: Page-2
+  - file: Pertemuan ke-3
+  - file: Sistem-persamaan-linear

@@ -33,4 +33,5 @@ $$
 x - y = 1
 \\
 $$
+
 - ![](geogebra-export.png)

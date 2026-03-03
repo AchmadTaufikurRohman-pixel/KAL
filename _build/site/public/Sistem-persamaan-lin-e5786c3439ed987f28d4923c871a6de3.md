@@ -1,1 +1,0 @@
-### 1.2 Sistem Persamaan Linear

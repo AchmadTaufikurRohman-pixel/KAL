@@ -1,0 +1,19 @@
+# Komputasi Aljabar Linear
+**Aljabar linear** adalah cabang matematika yang mempelajari vektor, ruang vektor (vektor space), transformasi linear, serta sistem persamaan linear. Ini berfokus pada penyelesaian persamaan dengan variabel berpangkat satu yang membentuk garis lurus atau bidang, menggunakan matriks dan operasi vektor untuk menganalisis struktur dimensi tinggi.
+- **Vektor** dalam aljabar linear adalah objek matematika yang merepresentasikan besaran yang memiliki arah dan nilai (magnitude), serta dapat dinyatakan sebagai susunan angka dalam bentuk terurut, seperti (𝑣1,𝑣2,...,𝑣𝑛). Secara geometris, vektor dapat dipahami sebagai panah di ruang dua atau tiga dimensi yang menunjukkan arah tertentu, sedangkan secara aljabar, vektor dipandang sebagai elemen dari suatu ruang vektor yang memenuhi operasi penjumlahan dan perkalian skalar. Dalam aljabar linear, vektor tidak hanya digunakan untuk menggambarkan posisi atau perpindahan, tetapi juga menjadi dasar dalam pembentukan konsep penting seperti ruang vektor, basis, dimensi, transformasi linear, dan sistem persamaan linear. Dengan sifat-sifat operasionalnya yang terstruktur, vektor memungkinkan analisis hubungan antar besaran secara sistematis dan menjadi fondasi utama dalam berbagai bidang matematika terapan, sains, dan komputasi.
+- **Sistem persamaan linear** adalah kumpulan persamaan linear yang dihubungkan bersama-sama dan memerlukan solusi yang memenuhi semua persamaan dalam sistem tersebut.(SPL) dapat berbentuk dua variabel (SPLDV) atau tiga variabel (SPLTV).
+
+---
+> Contoh persamaan linear (SPLDV) :
+$$
+Ax + By = C
+$$
+
+> Contoh persamaan linear (SPLTV) :
+$$
+Ax + By + Cz = 0
+$$
+
+---
+
+- Matriks** dalam aljabar linear adalah susunan bilangan yang ditata dalam baris dan kolom membentuk tabel persegi panjang, yang digunakan untuk merepresentasikan dan memanipulasi data atau sistem persamaan secara terstruktur. Sebuah matriks biasanya ditulis dalam tanda kurung siku, misalnya

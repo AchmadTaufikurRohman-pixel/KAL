@@ -1,0 +1,173 @@
+Traceback (most recent call last):
+  File "C:\Users\Puput\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\Puput\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\Puput\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "C:\Users\Puput\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "C:\Users\Puput\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\Puput\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\Puput\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Fixing random state for reproducibility
+np.random.seed(19680801)
+
+N = 10
+data = [np.logspace(0, 1, 100) + np.random.randn(100) + ii for ii in range(N)]
+data = np.array(data).T
+cmap = plt.cm.coolwarm
+rcParams['axes.prop_cycle'] = cycler(color=cmap(np.linspace(0, 1, N)))
+
+
+from matplotlib.lines import Line2D
+custom_lines = [Line2D([0], [0], color=cmap(0.), lw=4),
+                Line2D([0], [0], color=cmap(.5), lw=4),
+                Line2D([0], [0], color=cmap(1.), lw=4)]
+
+fig, ax = plt.subplots(figsize=(10, 5))
+lines = ax.plot(data)
+ax.legend(custom_lines, ['Cold', 'Medium', 'Hot']);
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mAttributeError[0m                            Traceback (most recent call last)
+Cell [1;32mIn[2], line 16[0m
+[0;32m     11[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlines[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Line2D
+[0;32m     12[0m custom_lines [38;5;241m=[39m [Line2D([[38;5;241m0[39m], [[38;5;241m0[39m], color[38;5;241m=[39mcmap([38;5;241m0.[39m), lw[38;5;241m=[39m[38;5;241m4[39m),
+[0;32m     13[0m                 Line2D([[38;5;241m0[39m], [[38;5;241m0[39m], color[38;5;241m=[39mcmap([38;5;241m.5[39m), lw[38;5;241m=[39m[38;5;241m4[39m),
+[0;32m     14[0m                 Line2D([[38;5;241m0[39m], [[38;5;241m0[39m], color[38;5;241m=[39mcmap([38;5;241m1.[39m), lw[38;5;241m=[39m[38;5;241m4[39m)]
+[1;32m---> 16[0m fig, ax [38;5;241m=[39m [43mplt[49m[38;5;241;43m.[39;49m[43msubplots[49m[43m([49m[43mfigsize[49m[38;5;241;43m=[39;49m[43m([49m[38;5;241;43m10[39;49m[43m,[49m[43m [49m[38;5;241;43m5[39;49m[43m)[49m[43m)[49m
+[0;32m     17[0m lines [38;5;241m=[39m ax[38;5;241m.[39mplot(data)
+[0;32m     18[0m ax[38;5;241m.[39mlegend(custom_lines, [[38;5;124m'[39m[38;5;124mCold[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mMedium[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mHot[39m[38;5;124m'[39m]);
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\pyplot.py:1455[0m, in [0;36msubplots[1;34m(nrows, ncols, sharex, sharey, squeeze, subplot_kw, gridspec_kw, **fig_kw)[0m
+[0;32m   1321[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21msubplots[39m(nrows[38;5;241m=[39m[38;5;241m1[39m, ncols[38;5;241m=[39m[38;5;241m1[39m, [38;5;241m*[39m, sharex[38;5;241m=[39m[38;5;28;01mFalse[39;00m, sharey[38;5;241m=[39m[38;5;28;01mFalse[39;00m, squeeze[38;5;241m=[39m[38;5;28;01mTrue[39;00m,
+[0;32m   1322[0m              subplot_kw[38;5;241m=[39m[38;5;28;01mNone[39;00m, gridspec_kw[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m[38;5;241m*[39mfig_kw):
+[0;32m   1323[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[0;32m   1324[0m [38;5;124;03m    Create a figure and a set of subplots.[39;00m
+[0;32m   1325[0m 
+[1;32m   (...)[0m
+[0;32m   1453[0m 
+[0;32m   1454[0m [38;5;124;03m    """[39;00m
+[1;32m-> 1455[0m     fig [38;5;241m=[39m figure([38;5;241m*[39m[38;5;241m*[39mfig_kw)
+[0;32m   1456[0m     axs [38;5;241m=[39m fig[38;5;241m.[39msubplots(nrows[38;5;241m=[39mnrows, ncols[38;5;241m=[39mncols, sharex[38;5;241m=[39msharex, sharey[38;5;241m=[39msharey,
+[0;32m   1457[0m                        squeeze[38;5;241m=[39msqueeze, subplot_kw[38;5;241m=[39msubplot_kw,
+[0;32m   1458[0m                        gridspec_kw[38;5;241m=[39mgridspec_kw)
+[0;32m   1459[0m     [38;5;28;01mreturn[39;00m fig, axs
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\pyplot.py:808[0m, in [0;36mfigure[1;34m(num, figsize, dpi, facecolor, edgecolor, frameon, FigureClass, clear, **kwargs)[0m
+[0;32m    799[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(allnums) [38;5;241m==[39m max_open_warning [38;5;241m>[39m[38;5;241m=[39m [38;5;241m1[39m:
+[0;32m    800[0m     _api[38;5;241m.[39mwarn_external(
+[0;32m    801[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mMore than [39m[38;5;132;01m{[39;00mmax_open_warning[38;5;132;01m}[39;00m[38;5;124m figures have been opened. [39m[38;5;124m"[39m
+[0;32m    802[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mFigures created through the pyplot interface [39m[38;5;124m"[39m
+[1;32m   (...)[0m
+[0;32m    805[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mwarning, see the rcParam `figure.max_open_warning`).[39m[38;5;124m"[39m,
+[0;32m    806[0m         [38;5;167;01mRuntimeWarning[39;00m)
+[1;32m--> 808[0m manager [38;5;241m=[39m new_figure_manager(
+[0;32m    809[0m     num, figsize[38;5;241m=[39mfigsize, dpi[38;5;241m=[39mdpi,
+[0;32m    810[0m     facecolor[38;5;241m=[39mfacecolor, edgecolor[38;5;241m=[39medgecolor, frameon[38;5;241m=[39mframeon,
+[0;32m    811[0m     FigureClass[38;5;241m=[39mFigureClass, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m    812[0m fig [38;5;241m=[39m manager[38;5;241m.[39mcanvas[38;5;241m.[39mfigure
+[0;32m    813[0m [38;5;28;01mif[39;00m fig_label:
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\pyplot.py:326[0m, in [0;36mnew_figure_manager[1;34m(*args, **kwargs)[0m
+[0;32m    324[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mnew_figure_manager[39m([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[0;32m    325[0m [38;5;250m    [39m[38;5;124;03m"""Create a new figure manager instance."""[39;00m
+[1;32m--> 326[0m     [43m_warn_if_gui_out_of_main_thread[49m[43m([49m[43m)[49m
+[0;32m    327[0m     [38;5;28;01mreturn[39;00m _get_backend_mod()[38;5;241m.[39mnew_figure_manager([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\pyplot.py:316[0m, in [0;36m_warn_if_gui_out_of_main_thread[1;34m()[0m
+[0;32m    315[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21m_warn_if_gui_out_of_main_thread[39m():
+[1;32m--> 316[0m     [38;5;28;01mif[39;00m (_get_required_interactive_framework([43m_get_backend_mod[49m[43m([49m[43m)[49m)
+[0;32m    317[0m             [38;5;129;01mand[39;00m threading[38;5;241m.[39mcurrent_thread() [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m threading[38;5;241m.[39mmain_thread()):
+[0;32m    318[0m         _api[38;5;241m.[39mwarn_external(
+[0;32m    319[0m             [38;5;124m"[39m[38;5;124mStarting a Matplotlib GUI outside of the main thread will likely [39m[38;5;124m"[39m
+[0;32m    320[0m             [38;5;124m"[39m[38;5;124mfail.[39m[38;5;124m"[39m)
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\pyplot.py:217[0m, in [0;36m_get_backend_mod[1;34m()[0m
+[0;32m    208[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[0;32m    209[0m [38;5;124;03mEnsure that a backend is selected and return it.[39;00m
+[0;32m    210[0m 
+[0;32m    211[0m [38;5;124;03mThis is currently private, but may be made public in the future.[39;00m
+[0;32m    212[0m [38;5;124;03m"""[39;00m
+[0;32m    213[0m [38;5;28;01mif[39;00m _backend_mod [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m    214[0m     [38;5;66;03m# Use __getitem__ here to avoid going through the fallback logic (which[39;00m
+[0;32m    215[0m     [38;5;66;03m# will (re)import pyplot and then call switch_backend if we need to[39;00m
+[0;32m    216[0m     [38;5;66;03m# resolve the auto sentinel)[39;00m
+[1;32m--> 217[0m     [43mswitch_backend[49m[43m([49m[38;5;28;43mdict[39;49m[38;5;241;43m.[39;49m[38;5;21;43m__getitem__[39;49m[43m([49m[43mrcParams[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mbackend[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m)[49m
+[0;32m    218[0m     [38;5;66;03m# Just to be safe.  Interactive mode can be turned on without calling[39;00m
+[0;32m    219[0m     [38;5;66;03m# `plt.ion()` so register it again here.  This is safe because multiple[39;00m
+[0;32m    220[0m     [38;5;66;03m# calls to `install_repl_displayhook` are no-ops and the registered[39;00m
+[0;32m    221[0m     [38;5;66;03m# function respects `mpl.is_interactive()` to determine if it should[39;00m
+[0;32m    222[0m     [38;5;66;03m# trigger a draw.[39;00m
+[0;32m    223[0m     install_repl_displayhook()
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\pyplot.py:288[0m, in [0;36mswitch_backend[1;34m(newbackend)[0m
+[0;32m    281[0m [38;5;66;03m# Backends are implemented as modules, but "inherit" default method[39;00m
+[0;32m    282[0m [38;5;66;03m# implementations from backend_bases._Backend.  This is achieved by[39;00m
+[0;32m    283[0m [38;5;66;03m# creating a "class" that inherits from backend_bases._Backend and whose[39;00m
+[0;32m    284[0m [38;5;66;03m# body is filled with the module's globals.[39;00m
+[0;32m    286[0m backend_name [38;5;241m=[39m cbook[38;5;241m.[39m_backend_module_name(newbackend)
+[1;32m--> 288[0m [38;5;28;01mclass[39;00m[38;5;250m [39m[38;5;21;01mbackend_mod[39;00m(matplotlib[38;5;241m.[39mbackend_bases[38;5;241m.[39m_Backend):
+[0;32m    289[0m     [38;5;28mlocals[39m()[38;5;241m.[39mupdate([38;5;28mvars[39m(importlib[38;5;241m.[39mimport_module(backend_name)))
+[0;32m    291[0m required_framework [38;5;241m=[39m _get_required_interactive_framework(backend_mod)
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\pyplot.py:289[0m, in [0;36mswitch_backend.<locals>.backend_mod[1;34m()[0m
+[0;32m    288[0m [38;5;28;01mclass[39;00m[38;5;250m [39m[38;5;21;01mbackend_mod[39;00m(matplotlib[38;5;241m.[39mbackend_bases[38;5;241m.[39m_Backend):
+[1;32m--> 289[0m     [38;5;28mlocals[39m()[38;5;241m.[39mupdate([38;5;28mvars[39m([43mimportlib[49m[38;5;241;43m.[39;49m[43mimport_module[49m[43m([49m[43mbackend_name[49m[43m)[49m))
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py:126[0m, in [0;36mimport_module[1;34m(name, package)[0m
+[0;32m    124[0m             [38;5;28;01mbreak[39;00m
+[0;32m    125[0m         level [38;5;241m+[39m[38;5;241m=[39m [38;5;241m1[39m
+[1;32m--> 126[0m [38;5;28;01mreturn[39;00m [43m_bootstrap[49m[38;5;241;43m.[39;49m[43m_gcd_import[49m[43m([49m[43mname[49m[43m[[49m[43mlevel[49m[43m:[49m[43m][49m[43m,[49m[43m [49m[43mpackage[49m[43m,[49m[43m [49m[43mlevel[49m[43m)[49m
+
+File [1;32m<frozen importlib._bootstrap>:1050[0m, in [0;36m_gcd_import[1;34m(name, package, level)[0m
+
+File [1;32m<frozen importlib._bootstrap>:1027[0m, in [0;36m_find_and_load[1;34m(name, import_)[0m
+
+File [1;32m<frozen importlib._bootstrap>:992[0m, in [0;36m_find_and_load_unlocked[1;34m(name, import_)[0m
+
+File [1;32m<frozen importlib._bootstrap>:241[0m, in [0;36m_call_with_frames_removed[1;34m(f, *args, **kwds)[0m
+
+File [1;32m<frozen importlib._bootstrap>:1050[0m, in [0;36m_gcd_import[1;34m(name, package, level)[0m
+
+File [1;32m<frozen importlib._bootstrap>:1027[0m, in [0;36m_find_and_load[1;34m(name, import_)[0m
+
+File [1;32m<frozen importlib._bootstrap>:1006[0m, in [0;36m_find_and_load_unlocked[1;34m(name, import_)[0m
+
+File [1;32m<frozen importlib._bootstrap>:688[0m, in [0;36m_load_unlocked[1;34m(spec)[0m
+
+File [1;32m<frozen importlib._bootstrap_external>:883[0m, in [0;36mexec_module[1;34m(self, module)[0m
+
+File [1;32m<frozen importlib._bootstrap>:241[0m, in [0;36m_call_with_frames_removed[1;34m(f, *args, **kwds)[0m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib_inline\__init__.py:1[0m
+[1;32m----> 1[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01m.[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m backend_inline, config  [38;5;66;03m# noqa[39;00m
+[0;32m      3[0m __version__ [38;5;241m=[39m [38;5;124m"[39m[38;5;124m0.2.1[39m[38;5;124m"[39m
+[0;32m      5[0m [38;5;66;03m# we can't ''.join(...) otherwise finding the version number at build time requires[39;00m
+[0;32m      6[0m [38;5;66;03m# import which introduces IPython and matplotlib at build time, and thus circular[39;00m
+[0;32m      7[0m [38;5;66;03m# dependencies.[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib_inline\backend_inline.py:236[0m
+[0;32m    231[0m                 ip[38;5;241m.[39mevents[38;5;241m.[39munregister([38;5;124m"[39m[38;5;124mpost_run_cell[39m[38;5;124m"[39m, configure_once)
+[0;32m    233[0m             ip[38;5;241m.[39mevents[38;5;241m.[39mregister([38;5;124m"[39m[38;5;124mpost_run_cell[39m[38;5;124m"[39m, configure_once)
+[1;32m--> 236[0m [43m_enable_matplotlib_integration[49m[43m([49m[43m)[49m
+[0;32m    239[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21m_fetch_figure_metadata[39m(fig):
+[0;32m    240[0m [38;5;250m    [39m[38;5;124;03m"""Get some metadata to help with displaying a figure."""[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib_inline\backend_inline.py:218[0m, in [0;36m_enable_matplotlib_integration[1;34m()[0m
+[0;32m    216[0m     backend [38;5;241m=[39m matplotlib[38;5;241m.[39mget_backend(auto_select[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[0;32m    217[0m [38;5;28;01melse[39;00m:
+[1;32m--> 218[0m     backend [38;5;241m=[39m [43mmatplotlib[49m[38;5;241;43m.[39;49m[43mrcParams[49m[38;5;241;43m.[39;49m[43m_get[49m([38;5;124m"[39m[38;5;124mbackend[39m[38;5;124m"[39m)
+[0;32m    220[0m [38;5;28;01mif[39;00m ip [38;5;129;01mand[39;00m backend [38;5;129;01min[39;00m ([38;5;124m"[39m[38;5;124minline[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mmodule://matplotlib_inline.backend_inline[39m[38;5;124m"[39m):
+[0;32m    221[0m     [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mIPython[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpylabtools[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m activate_matplotlib
+
+[1;31mAttributeError[0m: 'RcParams' object has no attribute '_get'
+

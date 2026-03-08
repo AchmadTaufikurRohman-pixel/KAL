@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Pertemuan ke-3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MATRIKS" href="Matriks.html" />
     <link rel="prev" title="Sistem Persamaan Linear" href="Sistem-persamaan-linear.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,6 +185,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="Sistem-persamaan-linear.html">Sistem Persamaan Linear</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistem Persamaan Linear 5 Variabel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matriks.html">MATRIKS</a></li>
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -387,6 +395,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6">Langkah 6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-7">Langkah 7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-8">Langkah 8:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jika-menggunakan-sage-cell">Jika menggunakan sage cell</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-menghilangkan-elemen-di-bawah-pivot-pertama">Langkah 1 — Menghilangkan elemen di bawah pivot pertama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-membuat-pivot-kedua-bernilai-1">Langkah 2 — Membuat pivot kedua bernilai 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menghilangkan-elemen-di-bawah-pivot-kedua">Langkah 3 — Menghilangkan elemen di bawah pivot kedua</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-membuat-pivot-ketiga-bernilai-1">Langkah 4 — Membuat pivot ketiga bernilai 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-menghilangkan-elemen-di-bawah-pivot-ketiga">Langkah 5 — Menghilangkan elemen di bawah pivot ketiga</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6-membuat-pivot-keempat-bernilai-1">Langkah 6 — Membuat pivot keempat bernilai 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-7-menghilangkan-elemen-di-bawah-pivot-keempat">Langkah 7 — Menghilangkan elemen di bawah pivot keempat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-8-membuat-pivot-kelima-bernilai-1">Langkah 8 — Membuat pivot kelima bernilai 1</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -398,7 +417,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="sistem-persamaan-linear-5-variabel">
+  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>
+sagecell.makeSagecell({
+inputLocation: ".sage"
+});
+</script>
+<section id="sistem-persamaan-linear-5-variabel">
 <h1>Sistem Persamaan Linear 5 Variabel<a class="headerlink" href="#sistem-persamaan-linear-5-variabel" title="Permalink to this heading">#</a></h1>
 <p>Misalkan sistem berikut:</p>
 <div class="math notranslate nohighlight">
@@ -596,17 +621,42 @@ Sehingga diperoleh matriks:</p>
 \right]
 \end{split}\]</div>
 <p>Sekarang pivot kelima (baris 5, kolom 5) sudah bernilai 1.</p>
+</section>
+<section id="jika-menggunakan-sage-cell">
+<h2>Jika menggunakan sage cell<a class="headerlink" href="#jika-menggunakan-sage-cell" title="Permalink to this heading">#</a></h2>
 <div class="sage">
 <script type="text/x-sage">
+# Matriks augmented
 A = matrix([
-[1,2,1],
-[2,3,4],
-[3,1,3]
+[1,1,1,1,1,15],
+[2,1,1,1,1,16],
+[1,2,1,1,1,17],
+[1,1,2,1,1,18],
+[1,1,1,2,1,19]
 ])
+A
 </script>
 </div>
+<section id="langkah-1-menghilangkan-elemen-di-bawah-pivot-pertama">
+<h3>Langkah 1 — Menghilangkan elemen di bawah pivot pertama<a class="headerlink" href="#langkah-1-menghilangkan-elemen-di-bawah-pivot-pertama" title="Permalink to this heading">#</a></h3>
+<p>Operasi:</p>
+<p>Tujuan:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+R_2 &amp;= R_2 - 2R_1 \\
+R_3 &amp;= R_3 - R_1 \\
+R_4 &amp;= R_4 - R_1 \\
+R_5 &amp;= R_5 - R_1
+\end{aligned}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Pivot pertama berada di kolom 1 baris 1 (nilai = 1).</p></li>
+<li><p>Semua angka di bawah pivot tersebut harus menjadi 0.</p></li>
+</ul>
 <div class="sage">
 <script type="text/x-sage">
+# Langkah 1
 A.add_multiple_of_row(1,0,-2)
 A.add_multiple_of_row(2,0,-1)
 A.add_multiple_of_row(3,0,-1)
@@ -614,12 +664,157 @@ A.add_multiple_of_row(4,0,-1)
 A
 </script>
 </div>
+</section>
+<section id="langkah-2-membuat-pivot-kedua-bernilai-1">
+<h3>Langkah 2 — Membuat pivot kedua bernilai 1<a class="headerlink" href="#langkah-2-membuat-pivot-kedua-bernilai-1" title="Permalink to this heading">#</a></h3>
+<p>Operasi:</p>
+<div class="math notranslate nohighlight">
+\[
+R_2 = -R_2
+\]</div>
+<p>Tujuan:</p>
+<ul class="simple">
+<li><p>Pivot pada baris kedua awalnya -1.</p></li>
+<li><p>Supaya standar eliminasi, pivot diubah menjadi 1.</p></li>
+</ul>
 <div class="sage">
 <script type="text/x-sage">
+# Langkah 2
 A.rescale_row(1,-1)
 A
 </script>
+</div>
+</section>
+<section id="langkah-3-menghilangkan-elemen-di-bawah-pivot-kedua">
+<h3>Langkah 3 — Menghilangkan elemen di bawah pivot kedua<a class="headerlink" href="#langkah-3-menghilangkan-elemen-di-bawah-pivot-kedua" title="Permalink to this heading">#</a></h3>
+<p>Operasi:</p>
+<div class="math notranslate nohighlight">
+\[
+R_3 = R_3 - R_2
+\]</div>
+<p>Tujuan:</p>
+<ul class="simple">
+<li><p>Menghilangkan angka di bawah pivot kedua.</p></li>
+<li><p>Sehingga kolom kedua menjadi:</p></li>
+</ul>
+<div class="sage">
+<script type="text/x-sage">
+# Langkah 3
+A.add_multiple_of_row(2,1,-1)
+A
+</script>
+</div>
+</section>
+<section id="langkah-4-membuat-pivot-ketiga-bernilai-1">
+<h3>Langkah 4 — Membuat pivot ketiga bernilai 1<a class="headerlink" href="#langkah-4-membuat-pivot-ketiga-bernilai-1" title="Permalink to this heading">#</a></h3>
+<p>Operasi:</p>
+<div class="math notranslate nohighlight">
+\[
+R_3 = -R_3
+\]</div>
+<p>Tujuan:</p>
+<ul class="simple">
+<li><p>Pivot ketiga awalnya -1.</p></li>
+<li><p>Diubah menjadi 1 agar sesuai standar eliminasi.</p></li>
+</ul>
+<div class="sage">
+<script type="text/x-sage">
+# Langkah 4
+A.rescale_row(2,-1)
+A
+</script>
+</div>
+</section>
+<section id="langkah-5-menghilangkan-elemen-di-bawah-pivot-ketiga">
+<h3>Langkah 5 — Menghilangkan elemen di bawah pivot ketiga<a class="headerlink" href="#langkah-5-menghilangkan-elemen-di-bawah-pivot-ketiga" title="Permalink to this heading">#</a></h3>
+<p>Operasi:</p>
+<div class="math notranslate nohighlight">
+\[
+R_4 = R_4 - R_3
+\]</div>
+<p>Tujuan:</p>
+<ul class="simple">
+<li><p>Membuat angka di bawah pivot ketiga menjadi 0.</p></li>
+<li><p>Kolom ketiga sekarang berbentuk:</p></li>
+</ul>
+<div class="sage">
+<script type="text/x-sage">
+# Langkah 5
+A.add_multiple_of_row(3,2,-1)
+A
+</script>
+</div>
+</section>
+<section id="langkah-6-membuat-pivot-keempat-bernilai-1">
+<h3>Langkah 6 — Membuat pivot keempat bernilai 1<a class="headerlink" href="#langkah-6-membuat-pivot-keempat-bernilai-1" title="Permalink to this heading">#</a></h3>
+<p>Operasi:</p>
+<div class="math notranslate nohighlight">
+\[
+R_4 = -R_4
+\]</div>
+<p>Tujuan:</p>
+<ul class="simple">
+<li><p>Pivot awalnya -1.</p></li>
+<li><p>Diubah menjadi 1.</p></li>
+</ul>
+<div class="sage">
+<script type="text/x-sage">
+# Langkah 6
+A.rescale_row(3,-1)
+A
+</script>
+</div>
+</section>
+<section id="langkah-7-menghilangkan-elemen-di-bawah-pivot-keempat">
+<h3>Langkah 7 — Menghilangkan elemen di bawah pivot keempat<a class="headerlink" href="#langkah-7-menghilangkan-elemen-di-bawah-pivot-keempat" title="Permalink to this heading">#</a></h3>
+<p>Operasi:</p>
+<div class="math notranslate nohighlight">
+\[
+R_5 = R_5 - R_4
+\]</div>
+<p>Tujuan:</p>
+<ul class="simple">
+<li><p>Membuat elemen di bawah pivot keempat menjadi 0.</p></li>
+</ul>
+<div class="sage">
+<script type="text/x-sage">
+# Langkah 7
+A.add_multiple_of_row(4,3,-1)
+A
+</script>
+</div>
+</section>
+<section id="langkah-8-membuat-pivot-kelima-bernilai-1">
+<h3>Langkah 8 — Membuat pivot kelima bernilai 1<a class="headerlink" href="#langkah-8-membuat-pivot-kelima-bernilai-1" title="Permalink to this heading">#</a></h3>
+<p>Operasi:</p>
+<div class="math notranslate nohighlight">
+\[
+R_5 = -R_5
+\]</div>
+<p>Tujuan:</p>
+<ul class="simple">
+<li><p>Pivot terakhir awalnya -1.</p></li>
+<li><p>Diubah menjadi 1.</p></li>
+</ul>
+<p>Sekarang matriks sudah berbentuk segitiga atas:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+1 + * + * + * + * \\
+0 + 1 + * + * + * \\
+0 + 0 + 1 + * + * \\
+0 + 0 + 0 + 1 + * \\
+0 + 0 + 0 + 0 + 1
+\end{aligned}
+\end{split}\]</div>
+<div class="sage">
+<script type="text/x-sage">
+# Langkah 8
+A.rescale_row(4,-1)
+A
+</script>
 </div></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -661,6 +856,15 @@ A
         <p class="prev-next-title">Sistem Persamaan Linear</p>
       </div>
     </a>
+    <a class="right-next"
+       href="Matriks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MATRIKS</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -685,6 +889,17 @@ A
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6">Langkah 6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-7">Langkah 7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-8">Langkah 8:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jika-menggunakan-sage-cell">Jika menggunakan sage cell</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-menghilangkan-elemen-di-bawah-pivot-pertama">Langkah 1 — Menghilangkan elemen di bawah pivot pertama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-membuat-pivot-kedua-bernilai-1">Langkah 2 — Membuat pivot kedua bernilai 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menghilangkan-elemen-di-bawah-pivot-kedua">Langkah 3 — Menghilangkan elemen di bawah pivot kedua</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-membuat-pivot-ketiga-bernilai-1">Langkah 4 — Membuat pivot ketiga bernilai 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-menghilangkan-elemen-di-bawah-pivot-ketiga">Langkah 5 — Menghilangkan elemen di bawah pivot ketiga</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6-membuat-pivot-keempat-bernilai-1">Langkah 6 — Membuat pivot keempat bernilai 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-7-menghilangkan-elemen-di-bawah-pivot-keempat">Langkah 7 — Menghilangkan elemen di bawah pivot keempat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-8-membuat-pivot-kelima-bernilai-1">Langkah 8 — Membuat pivot kelima bernilai 1</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

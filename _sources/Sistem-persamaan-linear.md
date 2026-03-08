@@ -1,4 +1,4 @@
-# 1.2 Sistem Persamaan Linear
+# Sistem Persamaan Linear
 
 Mempelajari sistem persamaan merupakan bagian penting dalam matematika. 
 Dalam bab ini kita membahas persamaan linear dan sistemnya secara cukup lengkap, 

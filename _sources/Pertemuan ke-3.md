@@ -1,4 +1,3 @@
-# SISTEM PERSAMAAN LINEAR 5 VARIABEL
 ## Sistem Persamaan Linear 5 Variabel
 
 Misalkan sistem berikut:
@@ -209,3 +208,32 @@ $$
 $$
 
 Sekarang pivot kelima (baris 5, kolom 5) sudah bernilai 1.
+
+<div class="sage">
+<script type="text/x-sage">
+A = matrix([
+[1,2,1],
+[2,3,4],
+[3,1,3]
+])
+</script>
+</div>
+
+
+<div class="sage">
+<script type="text/x-sage">
+A.add_multiple_of_row(1,0,-2)
+A.add_multiple_of_row(2,0,-1)
+A.add_multiple_of_row(3,0,-1)
+A.add_multiple_of_row(4,0,-1)
+A
+</script>
+</div>
+
+
+<div class="sage">
+<script type="text/x-sage">
+A.rescale_row(1,-1)
+A
+</script>
+</div>

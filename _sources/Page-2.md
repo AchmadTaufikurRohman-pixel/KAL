@@ -1,4 +1,3 @@
-# Pertemuan ke-2
 #### Persamaan Linear 4 Variabel
 Persamaan linear empat variabel adalah sebuah persamaan matematika yang melibatkan empat buah variabel berbeda (biasanya dilambangkan dengan huruf seperti x,y,z,w atau 
 x1,x2,x3,x4) di mana setiap variabelnya hanya berpangkat satu (linear).
@@ -21,14 +20,11 @@ Ciri-ciri utamanya:
 
 3. Terdiri dari suku-suku: Suku dengan variabel (misal:   
 2x) dan suku konstanta (misal:5).
+
 $$
-\large
-x_1+x_2+x_3+x_4=4
-\\
-2x_1+2x_2+2x_3+2x_4=8
-\\
-3x_1+3x_2+x_3+x_4=8
-\\
+x_1+x_2+x_3+x_4=4\\
+2x_1+2x_2+2x_3+2x_4=8\\
+3x_1+3x_2+x_3+x_4=8\\
 x_1-x_2+x_3-x_4=0
 $$
 #### Matriks Awal

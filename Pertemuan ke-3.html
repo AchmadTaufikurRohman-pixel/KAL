@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>SISTEM PERSAMAAN LINEAR 5 VARIABEL &#8212; My sample book</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Pertemuan ke-3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -172,9 +174,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Page-2.html">Pertemuan ke-2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sistem-persamaan-linear.html">1.2 Sistem Persamaan Linear</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SISTEM PERSAMAAN LINEAR 5 VARIABEL</a></li>
 </ul>
 
     </div>
@@ -360,7 +363,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>SISTEM PERSAMAAN LINEAR 5 VARIABEL</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -369,9 +372,19 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sistem Persamaan Linear 5 Variabel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1">Langkah 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2">Langkah 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3">Langkah 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4">Langkah 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5">Langkah 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6">Langkah 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-7">Langkah 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-8">Langkah 8:</a></li>
 </ul>
-
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -382,7 +395,209 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>tes</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="sistem-persamaan-linear-5-variabel">
+<h1>SISTEM PERSAMAAN LINEAR 5 VARIABEL<a class="headerlink" href="#sistem-persamaan-linear-5-variabel" title="Permalink to this heading">#</a></h1>
+<section id="id1">
+<h2>Sistem Persamaan Linear 5 Variabel<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Misalkan sistem berikut:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+x_1 + x_2 + x_3 + x_4 + x_5 &amp;= 15 \\
+2x_1 + x_2 + x_3 + x_4 + x_5 &amp;= 16 \\
+x_1 + 2x_2 + x_3 + x_4 + x_5 &amp;= 17 \\
+x_1 + x_2 + 2x_3 + x_4 + x_5 &amp;= 18 \\
+x_1 + x_2 + x_3 + 2x_4 + x_5 &amp;= 19
+\end{aligned}
+\end{split}\]</div>
+<p>Bentuk matriks augmented:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 16 \\
+1 &amp; 2 &amp; 1 &amp; 1 &amp; 1 &amp; 17 \\
+1 &amp; 1 &amp; 2 &amp; 1 &amp; 1 &amp; 18 \\
+1 &amp; 1 &amp; 1 &amp; 2 &amp; 1 &amp; 19
+\end{array}
+\right]
+\end{split}\]</div>
+<section id="langkah-1">
+<h3>Langkah 1<a class="headerlink" href="#langkah-1" title="Permalink to this heading">#</a></h3>
+<p>Hilangkan elemen di bawah pivot pertama.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+R_2 &amp;= R_2 - 2R_1 \\
+R_3 &amp;= R_3 - R_1 \\
+R_4 &amp;= R_4 - R_1 \\
+R_5 &amp;= R_5 - R_1
+\end{aligned}
+\end{split}\]</div>
+<p>Hasil:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; -1 &amp; -1 &amp; -1 &amp; -1 &amp; -14 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 2 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 3 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 4
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+<section id="langkah-2">
+<h3>Langkah 2<a class="headerlink" href="#langkah-2" title="Permalink to this heading">#</a></h3>
+<p>Ubah pivot kedua menjadi 1</p>
+<div class="math notranslate nohighlight">
+\[
+R_2 = -R_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 14 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 2 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 3 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 4
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+<section id="langkah-3">
+<h3>Langkah 3<a class="headerlink" href="#langkah-3" title="Permalink to this heading">#</a></h3>
+<p>Hilangkan elemen di bawah pivot kedua</p>
+<div class="math notranslate nohighlight">
+\[
+R_3 = R_3 - R_2
+\]</div>
+<p>Hasil:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 14 \\
+0 &amp; 0 &amp; -1 &amp; -1 &amp; -1 &amp; -12 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 3 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 4
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+<section id="langkah-4">
+<h3>Langkah 4<a class="headerlink" href="#langkah-4" title="Permalink to this heading">#</a></h3>
+<p>Ubah pivot ketiga menjadi 1</p>
+<div class="math notranslate nohighlight">
+\[
+R_3 = -R_3
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 14 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 3 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 4
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+<section id="langkah-5">
+<h3>Langkah 5<a class="headerlink" href="#langkah-5" title="Permalink to this heading">#</a></h3>
+<p>Hilangkan elemen di bawah pivot ketiga</p>
+<div class="math notranslate nohighlight">
+\[
+R_4 = R_4 - R_3
+\]</div>
+<p>Hasil:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 14 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; -9 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 4
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+<section id="langkah-6">
+<h3>Langkah 6<a class="headerlink" href="#langkah-6" title="Permalink to this heading">#</a></h3>
+<p>Ubah pivot keempat menjadi 1</p>
+<div class="math notranslate nohighlight">
+\[
+R_4 = -R_4
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 14 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 9 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 4
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+<section id="langkah-7">
+<h3>Langkah 7<a class="headerlink" href="#langkah-7" title="Permalink to this heading">#</a></h3>
+<p>Hilangkan elemen di bawah pivot keempat</p>
+<div class="math notranslate nohighlight">
+\[
+R_5 = R_5 - R_4
+\]</div>
+<p>Hasil:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 14 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 9 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -5
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+<section id="langkah-8">
+<h3>Langkah 8:<a class="headerlink" href="#langkah-8" title="Permalink to this heading">#</a></h3>
+<p>Mengubah Pivot Kelima Menjadi 1</p>
+<p>Kita kalikan baris kelima dengan negatif satu:
+<span class="math notranslate nohighlight">\(
+\left[
+R_5 = -R_5
+\right]
+\)</span>
+Sehingga diperoleh matriks:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 14 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 12 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 9  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 5  \\
+\end{array}
+\right]
+\end{split}\]</div>
+<p>Sekarang pivot kelima (baris 5, kolom 5) sudah bernilai 1.</p>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -438,9 +653,19 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sistem Persamaan Linear 5 Variabel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1">Langkah 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2">Langkah 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3">Langkah 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4">Langkah 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5">Langkah 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6">Langkah 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-7">Langkah 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-8">Langkah 8:</a></li>
 </ul>
-
+</li>
+</ul>
   </nav></div>
 
 </div></div>

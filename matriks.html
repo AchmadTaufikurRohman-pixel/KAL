@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>2.1 Aritnmatika Matriks &#8212; My sample book</title>
+    <title>2.1 Aritmatika Matriks &#8212; My sample book</title>
   
   
   
@@ -184,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="Sistem-persamaan-linear.html">Sistem Persamaan Linear</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pertemuan%20ke-3.html">Sistem Persamaan Linear 5 Variabel</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2.1 Aritnmatika Matriks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2.1 Aritmatika Matriks</a></li>
 
 </ul>
 
@@ -287,7 +287,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/matriks.md" target="_blank"
+      <li><a href="_sources/matriks.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -371,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>2.1 Aritnmatika Matriks</h1>
+    <h1>2.1 Aritmatika Matriks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,10 +381,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.1 Aritnmatika Matriks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.1 Aritmatika Matriks</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dasar-dasar-matriks">2.1.1 Dasar-dasar Matriks</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-2-1-2-matriks-sebuah-matriks-real-adalah-array-persegi-panjang-dari-bilangan-real"><strong>Definition 2.1.2. Matriks</strong>. Sebuah matriks (real) adalah array persegi panjang dari bilangan real</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-2-1-3-notasi-matriks"><strong>Definition 2.1.3. Notasi Matriks.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-2-1-5-kesamaan-matriks">Definition 2.1.5 Kesamaan Matriks.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-2-1-7-matriks-persegi-vektor-baris-vektor-kolom-matriks-nol">Definition 2.1.7. Matriks persegi, vektor baris, vektor kolom, matriks nol.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-pengurangan-dan-perkalian-skalar">2.1.8 Penjumlahan, Pengurangan, dan perkalian skalar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-dan-pengurangan-matriks">Penjumlahan dan Pengurangan matriks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpos">2.1.9 Transpos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aljabar-matriks-sifat-sifatnya">2.1.10 Aljabar matriks, sifat sifatnya</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identitas-matriks">2.1.11 Identitas Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan">2.1.12 Determinan</a></li>
 </ul>
 </li>
 </ul>
@@ -399,8 +409,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="aritnmatika-matriks">
-<h1>2.1 Aritnmatika Matriks<a class="headerlink" href="#aritnmatika-matriks" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="aritmatika-matriks">
+<h1>2.1 Aritmatika Matriks<a class="headerlink" href="#aritmatika-matriks" title="Permalink to this heading">#</a></h1>
 <p>Matriks memainkan peran dalam membahas tentang sistem linear di Chapter 1. Dalam bab ini membahas lebih mendalam tentang matrik.</p>
 <p>Seperti topik matematika lainnya, matriks dapat digunakan dalam banyak hal. Dengan demikian, penting untuk memabahas lebih detail dalam kursus ini.</p>
 <p><strong>Principle 2.1.1.</strong> Matriks. Tidak setiap matriks harus dianggap sebagai matriks augmented yang terkait dengan sistem linear.</p>
@@ -424,6 +434,183 @@ a11 &amp; a
 <p>Notasi matriks Ditulis sebagai [<span class="math notranslate nohighlight">\(a_{ij}\)</span>] <span class="math notranslate nohighlight">\({mxn}\)</span> artinya matriks berukuran <em>m</em> baris dan <em>n</em> kolom, dengan <span class="math notranslate nohighlight">\(a_{ij}\)</span> sebagai elemen pada baris ke-<em>i</em>, kolom ke-<em>j</em>. kadang disingkat jadi [<span class="math notranslate nohighlight">\(a_{ij}\)</span>].</p>
 <p>Notasi elemen matriks, jika ada matriks <em>A</em>, maka a[i,j] atau menyatakan <span class="math notranslate nohighlight">\(a_{ij}\)</span>  elemen pada baris ke-<em>i</em> dan kolom ke<em>j</em></p>
 <p>Kesimpulan untuk matriks A=[<span class="math notranslate nohighlight">\(a_{ij}\)</span>]<span class="math notranslate nohighlight">\({mxn}\)</span> berlaku A[i,j] = <span class="math notranslate nohighlight">\(a_{ij}\)</span> dengan 1 ≤ <em>i</em> ≤ <em>m</em> dan 1 ≤ <em>j</em> ≤ <em>n</em></p>
+</section>
+<section id="definition-2-1-5-kesamaan-matriks">
+<h2>Definition 2.1.5 Kesamaan Matriks.<a class="headerlink" href="#definition-2-1-5-kesamaan-matriks" title="Permalink to this heading">#</a></h2>
+<p>misalkan A dan B adalah matriks dengan dimensi <em>m x n</em> dan <em>m! x n!</em> masing-masing Dua matriks tersebut <em>sama</em> jika</p>
+<ol class="arabic simple">
+<li><p><em>m = m! dan n = n!</em></p></li>
+<li><p><span class="math notranslate nohighlight">\([A]ij\)</span> = <span class="math notranslate nohighlight">\([B]ij\)</span> untuk semua 1 ≤ <em>i</em> ≤ <em>m</em> dan 1 ≤ <em>j</em> ≤ <em>n</em></p></li>
+</ol>
+<p>Dengan kata lain, kita memiliki A = B jika dan hanya jika A dan B memiliki bentuk yang sama, dan setiap entri dari A sama dengan yang bersesuaian dari B</p>
+</section>
+<section id="definition-2-1-7-matriks-persegi-vektor-baris-vektor-kolom-matriks-nol">
+<h2>Definition 2.1.7. Matriks persegi, vektor baris, vektor kolom, matriks nol.<a class="headerlink" href="#definition-2-1-7-matriks-persegi-vektor-baris-vektor-kolom-matriks-nol" title="Permalink to this heading">#</a></h2>
+<p>Sebuah matriks <em>A</em> adalah bujur sangkar (persegi) jika dimensinya adalah <em>𝑛 × 𝑛</em>. Diagonal dari sebuah matriks persegi 𝐴=[<span class="math notranslate nohighlight">\(𝑎_{𝑖𝑗}\)</span>] 𝑛×𝑛 terdiri dari entri-entri <span class="math notranslate nohighlight">\(a_{ii}\)</span> untuk 1 ≤ 𝑖 ≤ 𝑛.
+Sebuah matriks 1 × 𝑛</p>
+<div class="math notranslate nohighlight">
+\[
+A =
+\begin{bmatrix}
+a_1 &amp; a_2 &amp; \ldots &amp; a_n
+\end{bmatrix}
+\]</div>
+<p>disebut <strong>vektor baris.</strong> entri ke-j dari sebuah vektor baris <em>a</em> dilambangkan <span class="math notranslate nohighlight">\([a]j\)</span>.</p>
+<p>Sebuah matriks n X 1</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{bmatrix}
+b_1 \\
+b_2 \\
+\vdots\\
+b_n
+\end{bmatrix}
+\end{split}\]</div>
+<p>disebut <strong>vektor kolom</strong>. Entri ke-<em>i</em> dari sebuah vektor kolom <strong>b</strong> dilambangkan <span class="math notranslate nohighlight">\([b]_i\)</span></p>
+<p><strong>m x n matriks nol</strong>, DIlambangkan <span class="math notranslate nohighlight">\(0_{mxn}\)</span> adalah matriks dengan dimensi tersebut, yang semua entrinya adalah nol; yaitu <span class="math notranslate nohighlight">\((0_{mxn})_{ij}\)</span> = 0 untuk semua 1 ≤ <em>i</em> ≤ <em>m</em> dan 1 ≤ <em>j</em> ≤ <em>n</em>.</p>
+</section>
+<section id="penjumlahan-pengurangan-dan-perkalian-skalar">
+<h2>2.1.8 Penjumlahan, Pengurangan, dan perkalian skalar<a class="headerlink" href="#penjumlahan-pengurangan-dan-perkalian-skalar" title="Permalink to this heading">#</a></h2>
+<section id="penjumlahan-dan-pengurangan-matriks">
+<h3>Penjumlahan dan Pengurangan matriks<a class="headerlink" href="#penjumlahan-dan-pengurangan-matriks" title="Permalink to this heading">#</a></h3>
+<p><em>Penjumlahan Matriks</em> adalah operasi yang didefinisakn sebagai berikut diberikan dua matriks m x n A = <span class="math notranslate nohighlight">\([a_{uj}]_{mxn}\)</span> dan B = <span class="math notranslate nohighlight">\([b_{uj}]_{mxn}\)</span> kita mendefinisakn <em>jumlah</em> mereka menjadi matriks</p>
+<p><em>Pengurangan Matriks</em> adalah operasi yang didefinisikan sebagai berikut:
+diberikan dua matriks m x n A = <span class="math notranslate nohighlight">\([a_{ij}]_{mxn}\)</span> dan A = <span class="math notranslate nohighlight">\([b_{ij}]_{mxn}\)</span> kita mendefinisikan <em>selisih</em> mereka menjadi matriks.</p>
+<p><em>Perkalian Matriks</em> adalah operasi yang didefinisikan sebagai berikut: diberikan sebuah matriks m x n A = <span class="math notranslate nohighlight">\([a_{ij}]_{mxn}\)</span> dan sebuah matriks n x r B = <span class="math notranslate nohighlight">\([b_{ij}]_{nxr}\)</span>, kita mendefinisikan perkalian matriks tersebut menjadi matriks <em>m x r AB</em> yang entri <em>ij</em>-nya dinyatakan dengan formula</p>
+<div class="math notranslate nohighlight">
+\[
+[AB]_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + a_{ir}b_{rj} = \sum^r_{l=1} a_{il}b_{ij} 
+\]</div>
+<p>untuk semua 1 ≤ i ≤ m dan 1 ≤ j ≤ r</p>
+</section>
+</section>
+<section id="transpos">
+<h2>2.1.9 Transpos<a class="headerlink" href="#transpos" title="Permalink to this heading">#</a></h2>
+<p><em>Tranposisi dari sebuah matriks.</em> Diberikan sebuah matriks m x n A = <span class="math notranslate nohighlight">\([a_{ij}]\)</span> transposnya <span class="math notranslate nohighlight">\(A^T\)</span> adalah matriks yang entri <em>ij</em>-ya adalah entri *ji-th dari A. Dengan kata lain. <span class="math notranslate nohighlight">\(A^T\)</span> adalah matriks n x m yang memenuhi <span class="math notranslate nohighlight">\([A^T]_{ij}\)</span> = <span class="math notranslate nohighlight">\([A]_{ji}\)</span> untuk semua 1 ≤ i ≤ n dan 1 ≤ j ≤ m.</p>
+<p><em>misal</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6
+\end{bmatrix}
+\end{split}\]</div>
+<p>menjadi</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A^T
+\begin{bmatrix}
+1 &amp; 4 \\
+2 &amp; 5 \\
+3 &amp; 6
+\end{bmatrix}
+\end{split}\]</div>
+<p><strong>Transpoisi Matriks</strong> diimplementasikan dalam Sage sebagai metode transpose(). Dalam sel di bawah ini kita (a) memilih bilangan bulatt acak 1 ≤ m,n ≤ 6,(b) memilih sebuah matriks acak m x n <em>A</em> dengan entri bilangan bulat, dan (c) menghitung transpos dari A.</p>
+</section>
+<section id="aljabar-matriks-sifat-sifatnya">
+<h2>2.1.10 Aljabar matriks, sifat sifatnya<a class="headerlink" href="#aljabar-matriks-sifat-sifatnya" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><em>Hukum komutatif penjumlahan</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> A + B = B + A
+</pre></div>
+</div>
+</li>
+<li><p><em>Hukum asosiatif pejalian</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> A + (B + C) = (A + B) + C
+</pre></div>
+</div>
+</li>
+<li><p><em>Hukum distributif perkalian</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> A(BC) = (AB)C
+</pre></div>
+</div>
+</li>
+<li><p><em>Hukum distributif kiri</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> A(B + C) = AB + AC 
+</pre></div>
+</div>
+</li>
+<li><p><em>Hukum distributif kanan</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> (B+ C)A = BA+CA
+</pre></div>
+</div>
+</li>
+<li><p><em>Hukum distributif penskalaan</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> a(B + C) = aB + aC
+</pre></div>
+</div>
+</li>
+<li><p><em>Hukum distributif penskalaan lainnya</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> (a + b)C = aC +bC
+</pre></div>
+</div>
+</li>
+<li><p><em>Hukum asosiatif penskalaan</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> a(bC)=(ab)C
+</pre></div>
+</div>
+</li>
+<li><p><em>Hukum komutatif penskalaan</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> a(BC) = (aB)C = B(aC)
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="identitas-matriks">
+<h2>2.1.11 Identitas Matriks<a class="headerlink" href="#identitas-matriks" title="Permalink to this heading">#</a></h2>
+<p>matiks identitas n x n adalah persegi n x n</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+I_n
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; \ldots &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; \ldots &amp; 0\\
+\vdots\\
+0 &amp; 0 &amp; \ldots &amp; 0 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>dengan angka satu sepanjang diagonal dan nol di tempat lainnya. Dengan kata lain, untuk semua 1 ≤ i ≤ n dan 1 ≤ j ≤ n, kita memiliki</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+(I_n)_{ij} = 
+\begin{cases}
+1 &amp; jika i = j\\
+0 &amp; jika i \neq j
+\end{cases}
+\end{split}\]</div>
+<p>ketika ukuran n dari matriks identitas tidak penting,kita sering akan menootasikannya cukup sebagai <span class="math notranslate nohighlight">\(I\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Identitas penjumlahan.</p></li>
+</ol>
+<p>Matriks nol m x n <span class="math notranslate nohighlight">\(0_{m x n}\)</span> adalah <strong>identitas penjumlahan</strong> untuk matriks m x n dalam pengertian berikut: untuk sembarang matriks m x n <span class="math notranslate nohighlight">\(A\)</span> kita memiliki</p>
+<div class="math notranslate nohighlight">
+\[
+0_{mxn} + A = A
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Invers Penjumlahan</p></li>
+</ol>
+<p>Untuk sembarang matriks m x n <span class="math notranslate nohighlight">\(A\)</span> kita memiliki</p>
+<div class="math notranslate nohighlight">
+\[
+A + - A = A + (-1)A = 0_{mxn}.
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Identitas perkalian</p></li>
+</ol>
+<p>matriks identitas n x n adalah <strong>identitas perkalian</strong> untuk matriks n x n dalam pengertian berikut: untuk sembarang matriks n x n <span class="math notranslate nohighlight">\(A\)</span> kita memiliki</p>
+<div class="math notranslate nohighlight">
+\[
+I_n A = AI_n = A
+\]</div>
+</section>
+<section id="determinan">
+<h2>2.1.12 Determinan<a class="headerlink" href="#determinan" title="Permalink to this heading">#</a></h2>
+<p>Determinan adalah sebuah nilai skalar (bilangan real) yang dikaitkan dengan setiap matriks persegi <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(\det A \)</span> .
+Definisi determinan yang diberikan di bawah ini jauh dari intuitif dan secara khusus, kita akan melihat bahwa</p>
 </section>
 </section>
 
@@ -482,10 +669,20 @@ a11 &amp; a
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.1 Aritnmatika Matriks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.1 Aritmatika Matriks</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dasar-dasar-matriks">2.1.1 Dasar-dasar Matriks</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-2-1-2-matriks-sebuah-matriks-real-adalah-array-persegi-panjang-dari-bilangan-real"><strong>Definition 2.1.2. Matriks</strong>. Sebuah matriks (real) adalah array persegi panjang dari bilangan real</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-2-1-3-notasi-matriks"><strong>Definition 2.1.3. Notasi Matriks.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-2-1-5-kesamaan-matriks">Definition 2.1.5 Kesamaan Matriks.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-2-1-7-matriks-persegi-vektor-baris-vektor-kolom-matriks-nol">Definition 2.1.7. Matriks persegi, vektor baris, vektor kolom, matriks nol.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-pengurangan-dan-perkalian-skalar">2.1.8 Penjumlahan, Pengurangan, dan perkalian skalar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-dan-pengurangan-matriks">Penjumlahan dan Pengurangan matriks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpos">2.1.9 Transpos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aljabar-matriks-sifat-sifatnya">2.1.10 Aljabar matriks, sifat sifatnya</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identitas-matriks">2.1.11 Identitas Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan">2.1.12 Determinan</a></li>
 </ul>
 </li>
 </ul>

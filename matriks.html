@@ -395,7 +395,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aljabar-matriks-sifat-sifatnya">2.1.10 Aljabar matriks, sifat sifatnya</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identitas-matriks">2.1.11 Identitas Matriks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan">2.1.12 Determinan</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-notasi-matriks">DEfinisi notasi Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-notasi-matriks">Definisi notasi Matriks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minor">Minor</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-baris">Ekspansi Baris</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-kolom">Ekspansi Kolom</a></li>
@@ -433,9 +433,9 @@ document.write(`
 <h2><strong>Definition 2.1.2. Matriks</strong>. Sebuah matriks (real) adalah array persegi panjang dari bilangan real<a class="headerlink" href="#definition-2-1-2-matriks-sebuah-matriks-real-adalah-array-persegi-panjang-dari-bilangan-real" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[
-\begin{bmatriks}
+\begin{bmatrix}
 a11 &amp; a
-\end{bmatriks}
+\end{bmatrix}
 \]</div>
 <p>Sebuah matriks dengan <em>m</em> baris dan <em>n</em> kolom dikatakan memiliki ukuran (atau dimensi) .</p>
 <p>Matriks yang ditampilkan dalam (2.1.1) sulit dalam ruang yang dibutuhkan untuk menampilkannya, maupun waktu yang dibutuhkan untuk menulis atau mengetiknya. Oleh karena itu kami memperkenalkan dua bentuk notasi yang agak saling melengkapi untuk membantu mendeskripsikan matriks.</p>
@@ -626,14 +626,16 @@ $<span class="math notranslate nohighlight">\(
 A invertibel &lt;--&gt; \det A \neq 0
 \)</span>$</p>
 <section id="definisi-notasi-matriks">
-<h3>DEfinisi notasi Matriks<a class="headerlink" href="#definisi-notasi-matriks" title="Permalink to this heading">#</a></h3>
+<h3>Definisi notasi Matriks<a class="headerlink" href="#definisi-notasi-matriks" title="Permalink to this heading">#</a></h3>
 <p>Misalan <span class="math notranslate nohighlight">\(A adalah matriks n xn dengan n ≥ 2. submatriks dari \)</span>A<span class="math notranslate nohighlight">\( yang diperoleh dengan menghapus baris ke-i dan kolom ke-j dari \)</span>A<span class="math notranslate nohighlight">\( dilambangkan \)</span>A_{ij}$</p>
 <p>Misalkan <span class="math notranslate nohighlight">\(A = [a_{ij}]_{nxn}\)</span>. Determinan didefinisikan sebagai berikut:</p>
 <p>Kasus dasar:n = 1</p>
 <p>ketika n = 1 kita memiliki <span class="math notranslate nohighlight">\(A =  [a_{11}]\)</span> dan kita mendefinisikan det <span class="math notranslate nohighlight">\(A\)</span> = <span class="math notranslate nohighlight">\(a_{11}\)</span>.</p>
 <p>Kasus rekrusif: ketika ≥ 2 kita mendefinisikan n ≥ 2</p>
-<p>$$
-\det A = \sum^n_j=i (-1)^{1+j} a_{ij} \det A_{ij} = a_{11} det A_{11} - a_{12} \det A_{11} - a_{12}A_{12} + \ldots + (-1)^{1+n}a_{!n} \det A_{1n}</p>
+<div class="math notranslate nohighlight">
+\[
+\det A = \sum^n_j=i (-1)^{1+j} a_{ij} \det A_{ij} = a_{11} det A_{11} - a_{12} \det A_{11} - a_{12}A_{12} + \ldots + (-1)^{1+n}a_{!n} \det A_{1n}
+\]</div>
 <p>Example</p>
 <p>$$
 \det A = (-1)^{1+1}a \det A_{11} + (-1)^{1+2}b \det A_{12}\
@@ -704,26 +706,42 @@ M_{ij} = \det A_{ij}
 1 &amp; 1 &amp; 2 &amp; 1 &amp; 1 \\
 1 &amp; 1 &amp; 1 &amp; 2 &amp; 1 
 \end{bmatrix}\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\det A = \begin{bmatrix}
+<p><span class="math notranslate nohighlight">\(
+R_2 = R_2 - R_1\\
+R_3 = R_3 - R_1\\
+R_4 = R_4 - R_1\\
+R_5 = R_5 - R_1\\
+\)</span></p>
+<p>Matrik baru</p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}
 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
-2 &amp; 1 &amp; 3 &amp; 1 &amp; 2 \\
-1 &amp; 3 &amp; 2 &amp; 4 &amp; 1 \\
-3 &amp; 1 &amp; 1 &amp; 2 &amp; 3 \\
-2 &amp; 2 &amp; 2 &amp; 1 &amp; 1 
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 
 \end{bmatrix}
+\)</span></p>
+<p>ekspansi kolom pertama
+Hanya ada dua elemen <span class="math notranslate nohighlight">\(\neq\)</span> 0</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_{11} = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_{21} = 1\)</span></p></li>
+</ul>
+<p>Kofaktor pertama nilainya 0</p>
+<p>Kofaktor kedua nilainya 1</p>
+<p>Hasil dari:</p>
+<p><span class="math notranslate nohighlight">\(
 \begin{vmatrix}
-1 &amp; 1 &amp; 1 &amp; 1 \\
-2 &amp; 1 &amp; 1 &amp; 1 \\
-1 &amp; 2 &amp; 1 &amp; 1 \\
-1 &amp; 1 &amp; 2 &amp; 1 \\
-1 &amp; 1 &amp; 1 &amp; 2 
-\end{vmatrix}\)</span></p>
-<p><span class="math notranslate nohighlight">\( \begin{aligned} 
-\det A &amp;= (1 \times 1 \times 1 \times 1 \times 1) + (1 \times 1 \times 1 \times 1 \times 1) + (1 \times 1 \times 1 \times 1 \times 1) + (1 \times 1 \times 1 \times 1 \times 1) + (1 \times 2 \times 2 \times 2 \times 2) - (1 \times 1 \times 1 \times 1 \times 1) - (1 \times 1 \times 1 \times 2 \times 1) - (1 \times 2 \times 1 \times 1 \times 1) - (1 \times 1 \times 1 \times 1 \times 2) - (1 \times 1 \times 2 \times 1 \times 1)\\
-&amp;= 1+1+1+1+16-1-2-2-2-2\\
-&amp;= 20-9\\
-&amp;= 11
-\end{aligned}\)</span></p>
+1 &amp; 1 &amp; 1 &amp; 1\\
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{vmatrix}
+\)</span></p>
+<p>Determinan =</p>
+<p><span class="math notranslate nohighlight">\(\det(A) = (1)(0)-(1)(-1) =1\)</span></p>
+<p>Hasil akhir</p>
+<p><span class="math notranslate nohighlight">\(\det(A) = 1\)</span></p>
 </section>
 <section id="id1">
 <h2>Adjoin<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
@@ -923,7 +941,7 @@ A =
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aljabar-matriks-sifat-sifatnya">2.1.10 Aljabar matriks, sifat sifatnya</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identitas-matriks">2.1.11 Identitas Matriks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan">2.1.12 Determinan</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-notasi-matriks">DEfinisi notasi Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-notasi-matriks">Definisi notasi Matriks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minor">Minor</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-baris">Ekspansi Baris</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-kolom">Ekspansi Kolom</a></li>

@@ -180,7 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="Sistem-persamaan-linear.html">Sistem Persamaan Linear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linear.html">Sistem Persamaan Linear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gaussian.html">Eliminasi Gaussian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pertemuan-3.html">Sistem Persamaan Linear 5 Variabel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matriks.html">2.1 Aritmatika Matriks</a></li>
 
@@ -450,7 +452,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <p>REFERENSI: <a class="reference external" href="https://developer.apple.com/documentation/Accelerate/compressing-an-image-using-linear-algebra">https://developer.apple.com/documentation/Accelerate/compressing-an-image-using-linear-algebra</a></p>
+<p>LINK COLLAB: <a class="reference external" href="https://colab.research.google.com/drive/16fyjIqhGplxVRzE5gAeSfgdK1DCeTBE6?usp=sharing">https://colab.research.google.com/drive/16fyjIqhGplxVRzE5gAeSfgdK1DCeTBE6?usp=sharing</a></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># =========================================================</span>
 <span class="c1"># EIGENFACES + SVD STEP BY STEP</span>
@@ -597,24 +601,32 @@ document.write(`
 <span class="c1"># =========================================================</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">================ RECONSTRUCTION =================&quot;</span><span class="p">)</span>
 
-<span class="n">pilihan_k</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+<span class="n">pilihan_k</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">62</span><span class="p">]</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
     <span class="mi">1</span><span class="p">,</span>
     <span class="nb">len</span><span class="p">(</span><span class="n">pilihan_k</span><span class="p">),</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
     <span class="s2">&quot;Reconstruction Berdasarkan Nilai k&quot;</span><span class="p">,</span>
-    <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
     <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span>
 <span class="p">)</span>
 
+<span class="c1"># =========================================================</span>
+<span class="c1"># UKURAN ASLI GAMBAR</span>
+<span class="c1"># =========================================================</span>
+<span class="n">original_size</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">w</span>
+
+<span class="c1"># =========================================================</span>
+<span class="c1"># LOOP RECONSTRUCTION</span>
+<span class="c1"># =========================================================</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pilihan_k</span><span class="p">):</span>
 
     <span class="c1"># =====================================================</span>
-    <span class="c1"># POTONG MATRIX</span>
+    <span class="c1"># POTONG MATRIX SVD</span>
     <span class="c1"># =====================================================</span>
     <span class="n">U_k</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="n">k</span><span class="p">]</span>
 
@@ -631,20 +643,122 @@ document.write(`
     <span class="p">)</span>
 
     <span class="c1"># =====================================================</span>
-    <span class="c1"># HITUNG KOMPRESI</span>
+    <span class="c1"># PERSENTASE KOMPONEN</span>
     <span class="c1"># =====================================================</span>
-    <span class="n">original_size</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">w</span>
+    <span class="n">rank_maksimum</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+
+    <span class="n">persen_komponen</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">k</span> <span class="o">/</span> <span class="n">rank_maksimum</span>
+    <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="c1"># =====================================================</span>
+    <span class="c1"># HITUNG STORAGE SVD</span>
+    <span class="c1"># =====================================================</span>
+    <span class="n">ukuran_U</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">k</span>
+
+    <span class="n">ukuran_S</span> <span class="o">=</span> <span class="n">k</span>
+
+    <span class="n">ukuran_VT</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">w</span>
 
     <span class="n">compressed_size</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="p">(</span><span class="n">h</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span> <span class="o">+</span>
-        <span class="n">k</span> <span class="o">+</span>
-        <span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">w</span><span class="p">)</span>
+        <span class="n">ukuran_U</span> <span class="o">+</span>
+        <span class="n">ukuran_S</span> <span class="o">+</span>
+        <span class="n">ukuran_VT</span>
     <span class="p">)</span>
 
-    <span class="n">compression_ratio</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">storage_ratio</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">compressed_size</span> <span class="o">/</span>
         <span class="n">original_size</span>
     <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="c1"># =====================================================</span>
+    <span class="c1"># TAMPILKAN HASIL</span>
+    <span class="c1"># =====================================================</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span>
+        <span class="n">reconstructed</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Komponen : </span><span class="si">{</span><span class="n">persen_komponen</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Storage : </span><span class="si">{</span><span class="n">storage_ratio</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span>
+    <span class="p">)</span>
+
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="c1"># =========================================================</span>
+<span class="c1"># ANALISIS LAMBDA (EIGENVALUE)</span>
+<span class="c1"># =========================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">================ ANALISIS LAMBDA =================&quot;</span><span class="p">)</span>
+
+<span class="c1"># =========================================================</span>
+<span class="c1"># HITUNG LAMBDA</span>
+<span class="c1"># lambda = singular value^2</span>
+<span class="c1"># =========================================================</span>
+<span class="n">lambda_values</span> <span class="o">=</span> <span class="n">S</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">================ LAMBDA =================&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">62</span><span class="p">):</span>
+
+    <span class="c1"># jika masih dalam jumlah lambda asli</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lambda_values</span><span class="p">):</span>
+
+        <span class="n">nilai_lambda</span> <span class="o">=</span> <span class="n">lambda_values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="c1"># sisanya isi 0</span>
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">nilai_lambda</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Lambda ke-</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">nilai_lambda</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+<span class="c1"># =========================================================</span>
+<span class="c1"># CARI K YANG SUDAH MIRIP WAJAH ASLI</span>
+<span class="c1"># =========================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">================ PERBANDINGAN LAMBDA =================&quot;</span><span class="p">)</span>
+
+<span class="c1"># beberapa k yang akan dibandingkan</span>
+<span class="n">k_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">47</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="mi">2</span><span class="p">,</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">k_values</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">k_values</span><span class="p">):</span>
+
+    <span class="c1"># =====================================================</span>
+    <span class="c1"># RECONSTRUCTION</span>
+    <span class="c1"># =====================================================</span>
+    <span class="n">U_k</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="n">k</span><span class="p">]</span>
+
+    <span class="n">S_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">[:</span><span class="n">k</span><span class="p">])</span>
+
+    <span class="n">VT_k</span> <span class="o">=</span> <span class="n">VT</span><span class="p">[:</span><span class="n">k</span><span class="p">,</span> <span class="p">:]</span>
+
+    <span class="n">reconstructed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>
+        <span class="n">U_k</span><span class="p">,</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">S_k</span><span class="p">,</span> <span class="n">VT_k</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># =====================================================</span>
+    <span class="c1"># HITUNG ERROR</span>
+    <span class="c1"># =====================================================</span>
+    <span class="n">mse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">wajah_asli</span> <span class="o">-</span> <span class="n">reconstructed</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="p">)</span>
 
     <span class="c1"># =====================================================</span>
     <span class="c1"># SHOW IMAGE</span>
@@ -655,14 +769,115 @@ document.write(`
     <span class="p">)</span>
 
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="se">\n</span><span class="s2">Data = </span><span class="si">{</span><span class="n">compression_ratio</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span>
     <span class="p">)</span>
 
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
+    <span class="s2">&quot;Perbandingan Reconstruction Berdasarkan Lambda&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span>
+<span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># =========================================================</span>
+<span class="c1"># ANALISIS HASIL</span>
+<span class="c1"># =========================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Analisis:</span>
+
+<span class="s2">1. Lambda awal biasanya sangat besar</span>
+<span class="s2">   -&gt; menyimpan informasi wajah utama</span>
+
+<span class="s2">2. Lambda akhir sangat kecil</span>
+<span class="s2">   -&gt; hanya menyimpan detail kecil/noise</span>
+
+<span class="s2">3. Semakin banyak lambda digunakan:</span>
+<span class="s2">   - wajah semakin mirip asli</span>
+<span class="s2">   - error semakin kecil</span>
+
+<span class="s2">4. Biasanya pada k sekitar 30 - 40,</span>
+<span class="s2">   wajah sudah hampir identik</span>
+<span class="s2">   dengan gambar asli.</span>
+
+<span class="s2">5. Saat k = 47:</span>
+<span class="s2">   - seluruh komponen utama digunakan</span>
+<span class="s2">   - reconstruction hampir sempurna</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="c1"># =========================================================</span>
+<span class="c1"># PERBANDINGAN WAJAH ASLI vs HASIL k TERBESAR</span>
+<span class="c1"># Tambahkan di bawah bagian RECONSTRUCTION</span>
+<span class="c1"># =========================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">================ PERBANDINGAN FINAL =================&quot;</span><span class="p">)</span>
+
+<span class="c1"># ambil k terbesar</span>
+<span class="n">k_terbesar</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">pilihan_k</span><span class="p">)</span>
+
+<span class="c1"># =====================================================</span>
+<span class="c1"># POTONG MATRIX</span>
+<span class="c1"># =====================================================</span>
+<span class="n">U_k</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="n">k_terbesar</span><span class="p">]</span>
+
+<span class="n">S_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">[:</span><span class="n">k_terbesar</span><span class="p">])</span>
+
+<span class="n">VT_k</span> <span class="o">=</span> <span class="n">VT</span><span class="p">[:</span><span class="n">k_terbesar</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># =====================================================</span>
+<span class="c1"># RECONSTRUCTION FINAL</span>
+<span class="c1"># =====================================================</span>
+<span class="n">reconstructed_final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>
+    <span class="n">U_k</span><span class="p">,</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">S_k</span><span class="p">,</span> <span class="n">VT_k</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># =====================================================</span>
+<span class="c1"># TAMPILKAN PERBANDINGAN</span>
+<span class="c1"># =====================================================</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># gambar asli</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wajah_asli</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Wajah Asli&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+<span class="c1"># hasil reconstruction</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reconstructed_final</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hasil Reconstruction</span><span class="se">\n</span><span class="s2">k = </span><span class="si">{</span><span class="n">k_terbesar</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># =====================================================</span>
+<span class="c1"># HITUNG ERROR</span>
+<span class="c1"># =====================================================</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">wajah_asli</span> <span class="o">-</span> <span class="n">reconstructed_final</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai Mean Squared Error (MSE) :&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+
+<span class="c1"># =====================================================</span>
+<span class="c1"># ANALISIS</span>
+<span class="c1"># =====================================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Analisis:</span>
+<span class="s2">- k terbesar = </span><span class="si">{</span><span class="n">k_terbesar</span><span class="si">}</span>
+<span class="s2">- Semakin besar k,</span>
+<span class="s2">  hasil reconstruction semakin mirip</span>
+<span class="s2">  dengan wajah asli.</span>
+
+<span class="s2">- Jika k mendekati rank maksimum,</span>
+<span class="s2">  maka hampir seluruh informasi gambar</span>
+<span class="s2">  berhasil dipertahankan.</span>
+
+<span class="s2">- Error reconstruction semakin kecil.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 
 <span class="c1"># =========================================================</span>
 <span class="c1"># LANGKAH 7 : GRAFIK SINGULAR VALUES</span>
@@ -776,8 +991,118 @@ VT    : (47, 47)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================ RECONSTRUCTION =================
 </pre></div>
 </div>
-<img alt="_images/47735b235ef910091dd16a13a5dfcd0324b92b4fea26b7cd2c3d302dc64588ba.png" src="_images/47735b235ef910091dd16a13a5dfcd0324b92b4fea26b7cd2c3d302dc64588ba.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================ SINGULAR VALUES GRAPH =================
+<img alt="_images/a42897a1dccf090388c2739b933c5a58e651339f9b738ba68ac60df6cfa4f1c9.png" src="_images/a42897a1dccf090388c2739b933c5a58e651339f9b738ba68ac60df6cfa4f1c9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================ ANALISIS LAMBDA =================
+
+================ LAMBDA =================
+Lambda ke- 1 = 960.1624755859375
+Lambda ke- 2 = 11.256271362304688
+Lambda ke- 3 = 5.008810043334961
+Lambda ke- 4 = 4.534659385681152
+Lambda ke- 5 = 1.1335878372192383
+Lambda ke- 6 = 0.8724526762962341
+Lambda ke- 7 = 0.608807384967804
+Lambda ke- 8 = 0.4219309389591217
+Lambda ke- 9 = 0.2726961374282837
+Lambda ke-10 = 0.19001208245754242
+Lambda ke-11 = 0.12338901311159134
+Lambda ke-12 = 0.08652569353580475
+Lambda ke-13 = 0.07842952758073807
+Lambda ke-14 = 0.06483956426382065
+Lambda ke-15 = 0.04560881108045578
+Lambda ke-16 = 0.030525246635079384
+Lambda ke-17 = 0.0260513573884964
+Lambda ke-18 = 0.02059139870107174
+Lambda ke-19 = 0.013137317262589931
+Lambda ke-20 = 0.012407355941832066
+Lambda ke-21 = 0.0084999930113554
+Lambda ke-22 = 0.00694891344755888
+Lambda ke-23 = 0.005012337118387222
+Lambda ke-24 = 0.003643645206466317
+Lambda ke-25 = 0.0028828538488596678
+Lambda ke-26 = 0.0022902379278093576
+Lambda ke-27 = 0.002151941182091832
+Lambda ke-28 = 0.0018365847645327449
+Lambda ke-29 = 0.0011505302973091602
+Lambda ke-30 = 0.0009785782312974334
+Lambda ke-31 = 0.0008519120165146887
+Lambda ke-32 = 0.0005227258079685271
+Lambda ke-33 = 0.0004311555530875921
+Lambda ke-34 = 0.00034185542608611286
+Lambda ke-35 = 0.0002712786372285336
+Lambda ke-36 = 0.00019434912246651947
+Lambda ke-37 = 0.00016595731722190976
+Lambda ke-38 = 0.00013041714555583894
+Lambda ke-39 = 0.00010186897998210043
+Lambda ke-40 = 5.8305522543378174e-05
+Lambda ke-41 = 4.60496885352768e-05
+Lambda ke-42 = 3.524150451994501e-05
+Lambda ke-43 = 2.8440579626476392e-05
+Lambda ke-44 = 2.3302327463170514e-05
+Lambda ke-45 = 1.6936803149292246e-05
+Lambda ke-46 = 1.0071044016513042e-05
+Lambda ke-47 = 8.715841431694571e-06
+Lambda ke-48 = 0
+Lambda ke-49 = 0
+Lambda ke-50 = 0
+Lambda ke-51 = 0
+Lambda ke-52 = 0
+Lambda ke-53 = 0
+Lambda ke-54 = 0
+Lambda ke-55 = 0
+Lambda ke-56 = 0
+Lambda ke-57 = 0
+Lambda ke-58 = 0
+Lambda ke-59 = 0
+Lambda ke-60 = 0
+Lambda ke-61 = 0
+Lambda ke-62 = 0
+
+================ PERBANDINGAN LAMBDA =================
+</pre></div>
+</div>
+<img alt="_images/38e6cf175bb9b896fecc9b423bbc03ba0df7769a9ff8303653bc14462f844468.png" src="_images/38e6cf175bb9b896fecc9b423bbc03ba0df7769a9ff8303653bc14462f844468.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Analisis:
+
+1. Lambda awal biasanya sangat besar
+   -&gt; menyimpan informasi wajah utama
+
+2. Lambda akhir sangat kecil
+   -&gt; hanya menyimpan detail kecil/noise
+
+3. Semakin banyak lambda digunakan:
+   - wajah semakin mirip asli
+   - error semakin kecil
+
+4. Biasanya pada k sekitar 30 - 40,
+   wajah sudah hampir identik
+   dengan gambar asli.
+
+5. Saat k = 47:
+   - seluruh komponen utama digunakan
+   - reconstruction hampir sempurna
+
+
+================ PERBANDINGAN FINAL =================
+</pre></div>
+</div>
+<img alt="_images/5979e814db336c2de729779117131529566e2672c5c677768e8634b962610fbc.png" src="_images/5979e814db336c2de729779117131529566e2672c5c677768e8634b962610fbc.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Mean Squared Error (MSE) : 1.1735237e-14
+
+Analisis:
+- k terbesar = 62
+- Semakin besar k,
+  hasil reconstruction semakin mirip
+  dengan wajah asli.
+
+- Jika k mendekati rank maksimum,
+  maka hampir seluruh informasi gambar
+  berhasil dipertahankan.
+
+- Error reconstruction semakin kecil.
+
+
+================ SINGULAR VALUES GRAPH =================
 </pre></div>
 </div>
 <img alt="_images/b4c6227085572580a3577466ee94fda54ef99f25d80dff47a7e2460463bc5308.png" src="_images/b4c6227085572580a3577466ee94fda54ef99f25d80dff47a7e2460463bc5308.png" />

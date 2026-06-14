@@ -160,8 +160,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.jpeg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.jpeg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -183,13 +183,22 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="Sistem-persamaan-linear.html">Sistem Persamaan Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Pertemuan-3.html">Sistem Persamaan Linear 5 Variabel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linear.html">Sistem Persamaan Linear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gaussian.html">Eliminasi Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matriks%205%20Variabel.html">Membuat elementer 5 variabel dengan 5 persamaan</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matriks.html">2.1 Aritmatika Matriks</a></li>
+
+
+
+
+
+
+
+
 
 <li class="toctree-l1"><a class="reference internal" href="latihan.html">Tugas</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Eigen Value</a></li>
-
 
 
 <li class="toctree-l1"><a class="reference internal" href="EigenFaces.html">Penjelasan Eigenfaces</a></li>
@@ -410,9 +419,7 @@ document.write(`
 $$</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sqrt-4-1">\sqrt{4+1}
 $<span class="math notranslate nohighlight">\(	​
-\)</span>$</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#q-1-cdot-a-2">$
-q_1 \cdot a_2</a><ul class="visible nav section-nav flex-column">
+\)</span>$</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-proses-qr-iteration">Penjelasan Proses QR Iteration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-pada-gambar-disebut-qr-iteration">Metode pada gambar disebut QR Iteration.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuannya-untuk-mendekati-nilai-eigen-matriks">Tujuannya untuk mendekati nilai eigen matriks.</a></li>
@@ -561,16 +568,13 @@ a_2 =
 2
 \end{bmatrix}
 \)</span>$</p>
-<p>Sekarang hitung dot product <span class="math notranslate nohighlight">\( q_1 \cdot a_2\)</span></p>
+<p>Sekarang hitung dot product <span class="math notranslate nohighlight">\(q_1 \cdot a_2\)</span></p>
 <p>Rumus dot product:</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="q-1-cdot-a-2">
-<h1>$
-q_1 \cdot a_2<a class="headerlink" href="#q-1-cdot-a-2" title="Permalink to this heading">#</a></h1>
-<p>\left( \dfrac{2\sqrt{5}}{5} \times 1 \right)
+<p><span class="math notranslate nohighlight">\(q_1 \cdot a_2=
+\left( \dfrac{2\sqrt{5}}{5} \times 1 \right)
 +
 \left( \dfrac{\sqrt{5}}{5} \times 2 \right)
-$</p>
+\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 =
@@ -949,22 +953,30 @@ Matrix([[2, 1], [1, 2]])
 </div>
 </div>
 <p>Cari <span class="math notranslate nohighlight">\(A_{k+1} = R_kQ_k\)</span></p>
-<p>Diketahui:
-$<span class="math notranslate nohighlight">\(R = \begin{bmatrix} \sqrt{5} &amp; \frac{4\sqrt{5}}{5} \\ 0 &amp; \frac{3\sqrt{5}}{5} \end{bmatrix}\)</span>$</p>
-<p>dan
-$<span class="math notranslate nohighlight">\(Q = \begin{bmatrix} \frac{2\sqrt{5}}{5} &amp; -\frac{\sqrt{5}}{5} \\ \frac{\sqrt{5}}{5} &amp; \frac{2\sqrt{5}}{5} \end{bmatrix}\)</span><span class="math notranslate nohighlight">\(
-Sekarang hitung:
-\)</span><span class="math notranslate nohighlight">\(RQ = \begin{bmatrix} \sqrt{5} &amp; \frac{4\sqrt{5}}{5} \\ 0 &amp; \frac{3\sqrt{5}}{5} \end{bmatrix} \begin{bmatrix} \frac{2\sqrt{5}}{5} &amp; -\frac{\sqrt{5}}{5} \\ \frac{\sqrt{5}}{5} &amp; \frac{2\sqrt{5}}{5} \end{bmatrix}\)</span>$</p>
-<p>Baris 1 Kolom 1
-$<span class="math notranslate nohighlight">\((\sqrt{5} \times \frac{2\sqrt{5}}{5}) + (\frac{4\sqrt{5}}{5} \times \frac{\sqrt{5}}{5})\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(= 2 + \frac{4}{5}\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(= \frac{14}{5}\)</span>$</p>
-<p>Baris 1 Kolom 2
-$<span class="math notranslate nohighlight">\((\sqrt{5} \times -\frac{\sqrt{5}}{5}) + (\frac{4\sqrt{5}}{5} \times \frac{2\sqrt{5}}{5}) \)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(= -1 + \frac{8}{5}\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(= \frac{3}{5}\)</span>$</p>
-<p>Baris 2 Kolom 1
-$<span class="math notranslate nohighlight">\((0 \times \frac{2\sqrt{5}}{5}) + (\frac{3\sqrt{5}}{5} \times \frac{\sqrt{5}}{5})\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(= 0 + \frac{3}{5}\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(= \frac{3}{5}\)</span>$</p>
-<p>Baris 2 Kolom 2
-$<span class="math notranslate nohighlight">\((0 \times -\frac{\sqrt{5}}{5}) + (\frac{3\sqrt{5}}{5} \times \frac{2\sqrt{5}}{5})\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(= 0 + \frac{6}{5}\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(= \frac{6}{5}\)</span>$</p>
-<p>Hasil Akhir
-$<span class="math notranslate nohighlight">\(RQ = \begin{bmatrix} \frac{14}{5} &amp; \frac{3}{5} \\ \frac{3}{5} &amp; \frac{6}{5} \end{bmatrix}\)</span>$</p>
+<p>Diketahui:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R = \begin{bmatrix} \sqrt{5} &amp; \frac{4\sqrt{5}}{5} \\ 0 &amp; \frac{3\sqrt{5}}{5} \end{bmatrix}\end{split}\]</div>
+<p>dan</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}Q = \begin{bmatrix} \frac{2\sqrt{5}}{5} &amp; -\frac{\sqrt{5}}{5} \\ \frac{\sqrt{5}}{5} &amp; \frac{2\sqrt{5}}{5} \end{bmatrix}\end{split}\]</div>
+<p>Sekarang hitung:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}RQ = \begin{bmatrix} \sqrt{5} &amp; \frac{4\sqrt{5}}{5} \\ 0 &amp; \frac{3\sqrt{5}}{5} \end{bmatrix} \begin{bmatrix} \frac{2\sqrt{5}}{5} &amp; -\frac{\sqrt{5}}{5} \\ \frac{\sqrt{5}}{5} &amp; \frac{2\sqrt{5}}{5} \end{bmatrix}\end{split}\]</div>
+<p>Baris 1 Kolom 1</p>
+<div class="math notranslate nohighlight">
+\[(\sqrt{5} \times \frac{2\sqrt{5}}{5}) + (\frac{4\sqrt{5}}{5} \times \frac{\sqrt{5}}{5})$$ $$= 2 + \frac{4}{5}$$ $$= \frac{14}{5}\]</div>
+<p>Baris 1 Kolom 2</p>
+<div class="math notranslate nohighlight">
+\[(\sqrt{5} \times -\frac{\sqrt{5}}{5}) + (\frac{4\sqrt{5}}{5} \times \frac{2\sqrt{5}}{5}) $$ $$= -1 + \frac{8}{5}$$ $$= \frac{3}{5}\]</div>
+<p>Baris 2 Kolom 1</p>
+<div class="math notranslate nohighlight">
+\[(0 \times \frac{2\sqrt{5}}{5}) + (\frac{3\sqrt{5}}{5} \times \frac{\sqrt{5}}{5})$$ $$= 0 + \frac{3}{5}$$ $$= \frac{3}{5}\]</div>
+<p>Baris 2 Kolom 2</p>
+<div class="math notranslate nohighlight">
+\[(0 \times -\frac{\sqrt{5}}{5}) + (\frac{3\sqrt{5}}{5} \times \frac{2\sqrt{5}}{5})$$ $$= 0 + \frac{6}{5}$$ $$= \frac{6}{5}\]</div>
+<p>Hasil Akhir</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}RQ = \begin{bmatrix} \frac{14}{5} &amp; \frac{3}{5} \\ \frac{3}{5} &amp; \frac{6}{5} \end{bmatrix}\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">sqrt</span>
@@ -1243,9 +1255,7 @@ A10 =
 $$</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sqrt-4-1">\sqrt{4+1}
 $<span class="math notranslate nohighlight">\(	​
-\)</span>$</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#q-1-cdot-a-2">$
-q_1 \cdot a_2</a><ul class="visible nav section-nav flex-column">
+\)</span>$</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-proses-qr-iteration">Penjelasan Proses QR Iteration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-pada-gambar-disebut-qr-iteration">Metode pada gambar disebut QR Iteration.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuannya-untuk-mendekati-nilai-eigen-matriks">Tujuannya untuk mendekati nilai eigen matriks.</a></li>

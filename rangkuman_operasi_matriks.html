@@ -1,0 +1,1137 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>📐 Rangkuman Operasi Matriks &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'rangkuman_operasi_matriks';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="Page-1.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpeg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.jpeg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="Page-1.html">
+                    Pengantar Komputasi Aljabar Linear
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Page-2.html">Persamaan Linear 4 Variabel</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linear.html">Sistem Persamaan Linear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gaussian.html">Eliminasi Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matriks%205%20Variabel.html">Membuat elementer 5 variabel dengan 5 persamaan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matriks.html">2.1 Aritmatika Matriks</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="latihan.html">Tugas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas_Eigen_Value.html">Eigen Value</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="EigenFaces.html">Penjelasan Eigenfaces</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Frangkuman_operasi_matriks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/rangkuman_operasi_matriks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>📐 Rangkuman Operasi Matriks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">📐 Rangkuman Operasi Matriks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">📌 Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-matriks">➕ 1. Penjumlahan Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">1.1 Definisi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-umum">1.2 Rumus Umum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">1.3 Contoh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-penjumlahan-matriks">1.4 Sifat-Sifat Penjumlahan Matriks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengurangan-matriks">➖ 2. Pengurangan Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1 Definisi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2 Rumus Umum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3 Contoh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-pengurangan-matriks">2.4 Sifat-Sifat Pengurangan Matriks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matriks">✖️ 3. Perkalian Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-skalar-dengan-matriks">3.1 Perkalian Skalar dengan Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-dua-matriks">3.2 Perkalian Dua Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ilustrasi-matriks-2-times-2">3.3 Ilustrasi (Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.4 Contoh</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#maka-a-times-b-begin-pmatrix-1-5-2-7-1-6-2-8-3-5-4-7-3-6-4-8-end-pmatrix">Maka:
+$$
+A \times B =
+\begin{pmatrix}
+(1)(5)+(2)(7) &amp; (1)(6)+(2)(8) \
+(3)(5)+(4)(7) &amp; (3)(6)+(4)(8)
+\end{pmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-pmatrix-5-14-6-16-15-28-18-32-end-pmatrix">\begin{pmatrix}
+5+14 &amp; 6+16 \
+15+28 &amp; 18+32
+\end{pmatrix}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-perkalian-matriks">3.5 Sifat-Sifat Perkalian Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembagian-matriks-melalui-matriks-invers">➗ 4. Pembagian Matriks (Melalui Matriks Invers)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-pembagian-matriks">4.1 Konsep Pembagian Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-invers">4.2 Matriks Invers</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat">Syarat:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-invers-matriks-2-times-2">Rumus Invers Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-invers">4.3 Contoh Menghitung Invers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-b-cdot-b-1-i-begin-pmatrix-3-1-5-2-end-pmatrix-begin-pmatrix-2-1-5-3-end-pmatrix"><strong>Verifikasi:</strong> <span class="math notranslate nohighlight">\(B \cdot B^{-1} = I\)</span>
+$$
+\begin{pmatrix} 3 &amp; 1 \ 5 &amp; 2 \end{pmatrix}
+\begin{pmatrix} 2 &amp; -1 \ -5 &amp; 3 \end{pmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-pmatrix-6-5-3-3-10-10-5-6-end-pmatrix">\begin{pmatrix} 6-5 &amp; -3+3 \ 10-10 &amp; -5+6 \end{pmatrix}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penerapan-menyelesaikan-sistem-persamaan-linear">4.4 Penerapan: Menyelesaikan Sistem Persamaan Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-operasi-matriks">📋 5. Ringkasan Operasi Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aturan-dimensi">5.1 Aturan Dimensi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi">📚 Referensi</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="rangkuman-operasi-matriks">
+<h1>📐 Rangkuman Operasi Matriks<a class="headerlink" href="#rangkuman-operasi-matriks" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p><strong>Mata Kuliah:</strong> Aljabar Linear<br />
+<strong>Topik:</strong> Penjumlahan, Pengurangan, Perkalian, dan Pembagian Matriks</p>
+</div></blockquote>
+<hr class="docutils" />
+<section id="pendahuluan">
+<h2>📌 Pendahuluan<a class="headerlink" href="#pendahuluan" title="Permalink to this heading">#</a></h2>
+<p><strong>Matriks</strong> adalah susunan bilangan berbentuk persegi panjang yang terdiri dari baris dan kolom. Secara umum, matriks <span class="math notranslate nohighlight">\(A\)</span> berukuran <span class="math notranslate nohighlight">\(m \times n\)</span> dituliskan sebagai:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{pmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{pmatrix}
+\end{split}\]</div>
+<p>di mana <span class="math notranslate nohighlight">\(a_{ij}\)</span> adalah elemen pada baris ke-<span class="math notranslate nohighlight">\(i\)</span> dan kolom ke-<span class="math notranslate nohighlight">\(j\)</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="penjumlahan-matriks">
+<h2>➕ 1. Penjumlahan Matriks<a class="headerlink" href="#penjumlahan-matriks" title="Permalink to this heading">#</a></h2>
+<section id="definisi">
+<h3>1.1 Definisi<a class="headerlink" href="#definisi" title="Permalink to this heading">#</a></h3>
+<p>Dua matriks <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span> dapat dijumlahkan <strong>jika dan hanya jika</strong> keduanya berukuran sama (<span class="math notranslate nohighlight">\(m \times n\)</span>). Hasil penjumlahan <span class="math notranslate nohighlight">\(C = A + B\)</span> diperoleh dengan <strong>menjumlahkan elemen-elemen yang bersesuaian</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+C = A + B \quad \Longrightarrow \quad c_{ij} = a_{ij} + b_{ij}
+\]</div>
+</section>
+<section id="rumus-umum">
+<h3>1.2 Rumus Umum<a class="headerlink" href="#rumus-umum" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}
+\end{pmatrix}
++
+\begin{pmatrix}
+b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11}+b_{11} &amp; a_{12}+b_{12} \\ a_{21}+b_{21} &amp; a_{22}+b_{22}
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="contoh">
+<h3>1.3 Contoh<a class="headerlink" href="#contoh" title="Permalink to this heading">#</a></h3>
+<p>Diketahui:
+$<span class="math notranslate nohighlight">\(
+A = \begin{pmatrix} 1 &amp; 3 \\ 2 &amp; 5 \end{pmatrix}, \quad
+B = \begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix}
+\)</span>$</p>
+<p>Maka:
+$<span class="math notranslate nohighlight">\(
+A + B = \begin{pmatrix} 1+4 &amp; 3+1 \\ 2+0 &amp; 5+2 \end{pmatrix}
+= \begin{pmatrix} 5 &amp; 4 \\ 2 &amp; 7 \end{pmatrix}
+\)</span>$</p>
+</section>
+<section id="sifat-sifat-penjumlahan-matriks">
+<h3>1.4 Sifat-Sifat Penjumlahan Matriks<a class="headerlink" href="#sifat-sifat-penjumlahan-matriks" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sifat</p></th>
+<th class="head"><p>Rumus</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Komutatif</p></td>
+<td><p><span class="math notranslate nohighlight">\(A + B = B + A\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Asosiatif</p></td>
+<td><p><span class="math notranslate nohighlight">\((A + B) + C = A + (B + C)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Identitas</p></td>
+<td><p><span class="math notranslate nohighlight">\(A + O = A\)</span> (O = matriks nol)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Invers Aditif</p></td>
+<td><p><span class="math notranslate nohighlight">\(A + (-A) = O\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A + B =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pengurangan-matriks">
+<h2>➖ 2. Pengurangan Matriks<a class="headerlink" href="#pengurangan-matriks" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>2.1 Definisi<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Pengurangan matriks <span class="math notranslate nohighlight">\(A - B\)</span> didefinisikan sebagai penjumlahan <span class="math notranslate nohighlight">\(A\)</span> dengan <strong>negatif</strong> dari <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+C = A - B \quad \Longrightarrow \quad c_{ij} = a_{ij} - b_{ij}
+\]</div>
+<p>Syarat: <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span> harus berukuran <strong>sama</strong> (<span class="math notranslate nohighlight">\(m \times n\)</span>).</p>
+</section>
+<section id="id2">
+<h3>2.2 Rumus Umum<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}
+\end{pmatrix}
+-
+\begin{pmatrix}
+b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11}-b_{11} &amp; a_{12}-b_{12} \\ a_{21}-b_{21} &amp; a_{22}-b_{22}
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="id3">
+<h3>2.3 Contoh<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Diketahui:
+$<span class="math notranslate nohighlight">\(
+A = \begin{pmatrix} 7 &amp; 5 \\ 3 &amp; 9 \end{pmatrix}, \quad
+B = \begin{pmatrix} 2 &amp; 1 \\ 4 &amp; 6 \end{pmatrix}
+\)</span>$</p>
+<p>Maka:
+$<span class="math notranslate nohighlight">\(
+A - B = \begin{pmatrix} 7-2 &amp; 5-1 \\ 3-4 &amp; 9-6 \end{pmatrix}
+= \begin{pmatrix} 5 &amp; 4 \\ -1 &amp; 3 \end{pmatrix}
+\)</span>$</p>
+</section>
+<section id="sifat-sifat-pengurangan-matriks">
+<h3>2.4 Sifat-Sifat Pengurangan Matriks<a class="headerlink" href="#sifat-sifat-pengurangan-matriks" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sifat</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Tidak Komutatif</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(A - B \neq B - A\)</span> (umumnya)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tidak Asosiatif</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\((A - B) - C \neq A - (B - C)\)</span> (umumnya)</p></td>
+</tr>
+<tr class="row-even"><td><p>Hubungan dengan penjumlahan</p></td>
+<td><p><span class="math notranslate nohighlight">\(A - B = A + (-B)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="n">B</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A - B =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="perkalian-matriks">
+<h2>✖️ 3. Perkalian Matriks<a class="headerlink" href="#perkalian-matriks" title="Permalink to this heading">#</a></h2>
+<section id="perkalian-skalar-dengan-matriks">
+<h3>3.1 Perkalian Skalar dengan Matriks<a class="headerlink" href="#perkalian-skalar-dengan-matriks" title="Permalink to this heading">#</a></h3>
+<p>Jika <span class="math notranslate nohighlight">\(k\)</span> adalah skalar dan <span class="math notranslate nohighlight">\(A\)</span> adalah matriks <span class="math notranslate nohighlight">\(m \times n\)</span>, maka:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+k \cdot A = \begin{pmatrix}
+k \cdot a_{11} &amp; k \cdot a_{12} \\
+k \cdot a_{21} &amp; k \cdot a_{22}
+\end{pmatrix}
+\end{split}\]</div>
+<p><strong>Contoh:</strong> <span class="math notranslate nohighlight">\(k = 3\)</span>, <span class="math notranslate nohighlight">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+3 \cdot A = \begin{pmatrix} 3 &amp; 6 \\ 9 &amp; 12 \end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="perkalian-dua-matriks">
+<h3>3.2 Perkalian Dua Matriks<a class="headerlink" href="#perkalian-dua-matriks" title="Permalink to this heading">#</a></h3>
+<p>Perkalian matriks <span class="math notranslate nohighlight">\(A_{m \times n}\)</span> dengan <span class="math notranslate nohighlight">\(B_{n \times p}\)</span> <strong>hanya dapat dilakukan</strong> jika <strong>jumlah kolom <span class="math notranslate nohighlight">\(A\)</span> = jumlah baris <span class="math notranslate nohighlight">\(B\)</span></strong>. Hasilnya adalah matriks <span class="math notranslate nohighlight">\(C_{m \times p}\)</span> dengan elemen:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj}}
+\]</div>
+</section>
+<section id="ilustrasi-matriks-2-times-2">
+<h3>3.3 Ilustrasi (Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>)<a class="headerlink" href="#ilustrasi-matriks-2-times-2" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}
+\times
+\begin{pmatrix} e &amp; f \\ g &amp; h \end{pmatrix}
+=
+\begin{pmatrix}
+ae + bg &amp; af + bh \\
+ce + dg &amp; cf + dh
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="id4">
+<h3>3.4 Contoh<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>Diketahui:
+$<span class="math notranslate nohighlight">\(
+A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}, \quad
+B = \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}
+\)</span>$</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="maka-a-times-b-begin-pmatrix-1-5-2-7-1-6-2-8-3-5-4-7-3-6-4-8-end-pmatrix">
+<h1>Maka:
+$$
+A \times B =
+\begin{pmatrix}
+(1)(5)+(2)(7) &amp; (1)(6)+(2)(8) \
+(3)(5)+(4)(7) &amp; (3)(6)+(4)(8)
+\end{pmatrix}<a class="headerlink" href="#maka-a-times-b-begin-pmatrix-1-5-2-7-1-6-2-8-3-5-4-7-3-6-4-8-end-pmatrix" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="begin-pmatrix-5-14-6-16-15-28-18-32-end-pmatrix">
+<h1>\begin{pmatrix}
+5+14 &amp; 6+16 \
+15+28 &amp; 18+32
+\end{pmatrix}<a class="headerlink" href="#begin-pmatrix-5-14-6-16-15-28-18-32-end-pmatrix" title="Permalink to this heading">#</a></h1>
+<p>\begin{pmatrix} 19 &amp; 22 \ 43 &amp; 50 \end{pmatrix}
+$$</p>
+<section id="sifat-sifat-perkalian-matriks">
+<h2>3.5 Sifat-Sifat Perkalian Matriks<a class="headerlink" href="#sifat-sifat-perkalian-matriks" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sifat</p></th>
+<th class="head"><p>Rumus</p></th>
+<th class="head"><p>Catatan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Tidak Komutatif</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(AB \neq BA\)</span></p></td>
+<td><p>Umumnya tidak sama</p></td>
+</tr>
+<tr class="row-odd"><td><p>Asosiatif</p></td>
+<td><p><span class="math notranslate nohighlight">\((AB)C = A(BC)\)</span></p></td>
+<td><p>Selalu berlaku</p></td>
+</tr>
+<tr class="row-even"><td><p>Distributif</p></td>
+<td><p><span class="math notranslate nohighlight">\(A(B+C) = AB + AC\)</span></p></td>
+<td><p>Selalu berlaku</p></td>
+</tr>
+<tr class="row-odd"><td><p>Identitas</p></td>
+<td><p><span class="math notranslate nohighlight">\(AI = IA = A\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(I\)</span> = matriks identitas</p></td>
+</tr>
+<tr class="row-even"><td><p>Transpose</p></td>
+<td><p><span class="math notranslate nohighlight">\((AB)^T = B^T A^T\)</span></p></td>
+<td><p>Urutan terbalik</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+
+<span class="c1"># Perkalian matriks menggunakan @ atau np.dot()</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">B</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A x B =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+
+<span class="c1"># Buktikan bahwa AB ≠ BA</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">B x A =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">B</span> <span class="o">@</span> <span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AB == BA?&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">B</span><span class="p">,</span> <span class="n">B</span> <span class="o">@</span> <span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="pembagian-matriks-melalui-matriks-invers">
+<h2>➗ 4. Pembagian Matriks (Melalui Matriks Invers)<a class="headerlink" href="#pembagian-matriks-melalui-matriks-invers" title="Permalink to this heading">#</a></h2>
+<section id="konsep-pembagian-matriks">
+<h3>4.1 Konsep Pembagian Matriks<a class="headerlink" href="#konsep-pembagian-matriks" title="Permalink to this heading">#</a></h3>
+<p>Berbeda dengan bilangan real, <strong>pembagian langsung antar matriks tidak didefinisikan</strong>. Operasi yang setara dengan “pembagian” dilakukan menggunakan <strong>matriks invers</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{A}{B} \approx A \cdot B^{-1}
+\]</div>
+<p>di mana <span class="math notranslate nohighlight">\(B^{-1}\)</span> adalah <strong>invers</strong> dari matriks <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</section>
+<section id="matriks-invers">
+<h3>4.2 Matriks Invers<a class="headerlink" href="#matriks-invers" title="Permalink to this heading">#</a></h3>
+<p>Matriks <span class="math notranslate nohighlight">\(B^{-1}\)</span> adalah invers dari <span class="math notranslate nohighlight">\(B\)</span> jika:</p>
+<div class="math notranslate nohighlight">
+\[
+B \cdot B^{-1} = B^{-1} \cdot B = I
+\]</div>
+<p>di mana <span class="math notranslate nohighlight">\(I\)</span> adalah matriks identitas.</p>
+<section id="syarat">
+<h4>Syarat:<a class="headerlink" href="#syarat" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Matriks harus <strong>persegi</strong> (<span class="math notranslate nohighlight">\(n \times n\)</span>)</p></li>
+<li><p><strong>Determinan</strong> <span class="math notranslate nohighlight">\(\neq 0\)</span> (<span class="math notranslate nohighlight">\(\det(B) \neq 0\)</span>)</p></li>
+</ul>
+</section>
+<section id="rumus-invers-matriks-2-times-2">
+<h4>Rumus Invers Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>:<a class="headerlink" href="#rumus-invers-matriks-2-times-2" title="Permalink to this heading">#</a></h4>
+<p>Jika <span class="math notranslate nohighlight">\(B = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\)</span>, maka:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\boxed{B^{-1} = \frac{1}{\det(B)} \begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}}
+\end{split}\]</div>
+<p>dengan <span class="math notranslate nohighlight">\(\det(B) = ad - bc\)</span>.</p>
+</section>
+</section>
+<section id="contoh-menghitung-invers">
+<h3>4.3 Contoh Menghitung Invers<a class="headerlink" href="#contoh-menghitung-invers" title="Permalink to this heading">#</a></h3>
+<p>Diketahui:
+$<span class="math notranslate nohighlight">\(
+B = \begin{pmatrix} 3 &amp; 1 \\ 5 &amp; 2 \end{pmatrix}
+\)</span>$</p>
+<p><strong>Langkah 1:</strong> Hitung determinan:
+$<span class="math notranslate nohighlight">\(
+\det(B) = (3)(2) - (1)(5) = 6 - 5 = 1
+\)</span>$</p>
+<p><strong>Langkah 2:</strong> Hitung invers:
+$<span class="math notranslate nohighlight">\(
+B^{-1} = \frac{1}{1} \begin{pmatrix} 2 &amp; -1 \\ -5 &amp; 3 \end{pmatrix}
+= \begin{pmatrix} 2 &amp; -1 \\ -5 &amp; 3 \end{pmatrix}
+\)</span>$</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="verifikasi-b-cdot-b-1-i-begin-pmatrix-3-1-5-2-end-pmatrix-begin-pmatrix-2-1-5-3-end-pmatrix">
+<h1><strong>Verifikasi:</strong> <span class="math notranslate nohighlight">\(B \cdot B^{-1} = I\)</span>
+$$
+\begin{pmatrix} 3 &amp; 1 \ 5 &amp; 2 \end{pmatrix}
+\begin{pmatrix} 2 &amp; -1 \ -5 &amp; 3 \end{pmatrix}<a class="headerlink" href="#verifikasi-b-cdot-b-1-i-begin-pmatrix-3-1-5-2-end-pmatrix-begin-pmatrix-2-1-5-3-end-pmatrix" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="begin-pmatrix-6-5-3-3-10-10-5-6-end-pmatrix">
+<h1>\begin{pmatrix} 6-5 &amp; -3+3 \ 10-10 &amp; -5+6 \end{pmatrix}<a class="headerlink" href="#begin-pmatrix-6-5-3-3-10-10-5-6-end-pmatrix" title="Permalink to this heading">#</a></h1>
+<p>\begin{pmatrix} 1 &amp; 0 \ 0 &amp; 1 \end{pmatrix} = I \checkmark
+$$</p>
+<section id="penerapan-menyelesaikan-sistem-persamaan-linear">
+<h2>4.4 Penerapan: Menyelesaikan Sistem Persamaan Linear<a class="headerlink" href="#penerapan-menyelesaikan-sistem-persamaan-linear" title="Permalink to this heading">#</a></h2>
+<p>Sistem persamaan <span class="math notranslate nohighlight">\(AX = B\)</span> dapat diselesaikan dengan:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{X = A^{-1} \cdot B}
+\]</div>
+<p><strong>Contoh:</strong> Selesaikan sistem:
+$<span class="math notranslate nohighlight">\(
+\begin{cases} 3x + y = 7 \\ 5x + 2y = 12 \end{cases}
+\)</span>$</p>
+<p>Dalam bentuk matriks: <span class="math notranslate nohighlight">\(AX = B\)</span> dengan <span class="math notranslate nohighlight">\(A = \begin{pmatrix} 3 &amp; 1 \\ 5 &amp; 2 \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(X = \begin{pmatrix} x \\ y \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(B = \begin{pmatrix} 7 \\ 12 \end{pmatrix}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+X = A^{-1} B = \begin{pmatrix} 2 &amp; -1 \\ -5 &amp; 3 \end{pmatrix} \begin{pmatrix} 7 \\ 12 \end{pmatrix}
+= \begin{pmatrix} 14-12 \\ -35+36 \end{pmatrix}
+= \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+\end{split}\]</div>
+<p>Jadi <span class="math notranslate nohighlight">\(x = 2\)</span> dan <span class="math notranslate nohighlight">\(y = 1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung invers matriks</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">B_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;det(B) =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B_inv =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">B_inv</span><span class="p">)</span>
+
+<span class="c1"># Verifikasi B * B_inv = I</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B @ B_inv =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">B</span> <span class="o">@</span> <span class="n">B_inv</span><span class="p">))</span>
+
+<span class="c1"># Selesaikan AX = b</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># cara efisien</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Solusi X = A⁻¹b:&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="ringkasan-operasi-matriks">
+<h2>📋 5. Ringkasan Operasi Matriks<a class="headerlink" href="#ringkasan-operasi-matriks" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operasi</p></th>
+<th class="head"><p>Syarat</p></th>
+<th class="head"><p>Rumus Elemen</p></th>
+<th class="head"><p>Hasil</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Penjumlahan</strong> <span class="math notranslate nohighlight">\(A + B\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span> ukuran sama</p></td>
+<td><p><span class="math notranslate nohighlight">\(c_{ij} = a_{ij} + b_{ij}\)</span></p></td>
+<td><p>Matriks <span class="math notranslate nohighlight">\(m \times n\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pengurangan</strong> <span class="math notranslate nohighlight">\(A - B\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span> ukuran sama</p></td>
+<td><p><span class="math notranslate nohighlight">\(c_{ij} = a_{ij} - b_{ij}\)</span></p></td>
+<td><p>Matriks <span class="math notranslate nohighlight">\(m \times n\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Perkalian</strong> <span class="math notranslate nohighlight">\(A \times B\)</span></p></td>
+<td><p>Kolom <span class="math notranslate nohighlight">\(A\)</span> = Baris <span class="math notranslate nohighlight">\(B\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(c_{ij} = \sum_k a_{ik} b_{kj}\)</span></p></td>
+<td><p>Matriks <span class="math notranslate nohighlight">\(m \times p\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pembagian</strong> <span class="math notranslate nohighlight">\(A / B\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(B\)</span> harus invertible</p></td>
+<td><p><span class="math notranslate nohighlight">\(A \cdot B^{-1}\)</span></p></td>
+<td><p>Matriks <span class="math notranslate nohighlight">\(m \times n\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="aturan-dimensi">
+<h3>5.1 Aturan Dimensi<a class="headerlink" href="#aturan-dimensi" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+A_{\underbrace{m \times n}_{\text{baris} \times \text{kolom}}} \times B_{\underbrace{n \times p}_{\text{harus sama!}}} = C_{m \times p}
+\]</div>
+<blockquote>
+<div><p>⚠️ <strong>Perhatian:</strong> Untuk perkalian <span class="math notranslate nohighlight">\(A \times B\)</span>, jumlah <strong>kolom</strong> <span class="math notranslate nohighlight">\(A\)</span> harus sama dengan jumlah <strong>baris</strong> <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  DEMO LENGKAP OPERASI MATRIKS&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A =</span><span class="se">\n</span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;B =</span><span class="se">\n</span><span class="si">{</span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">➕ A + B =</span><span class="se">\n</span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">➖ A - B =</span><span class="se">\n</span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✖️  A × B =</span><span class="se">\n</span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">➗ A × B⁻¹ =</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">B</span><span class="p">),</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="referensi">
+<h2>📚 Referensi<a class="headerlink" href="#referensi" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Anton, H. &amp; Rorres, C. (2013). <em>Elementary Linear Algebra: Applications Version</em> (11th ed.). Wiley.</p></li>
+<li><p>Lay, D. C. (2016). <em>Linear Algebra and Its Applications</em> (5th ed.). Pearson.</p></li>
+<li><p>NumPy Documentation: <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.linalg.html">numpy.linalg</a></p></li>
+</ul>
+<hr class="docutils" />
+<p><em>Dibuat dengan LaTeX dan Python · Aljabar Linear</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">📐 Rangkuman Operasi Matriks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">📌 Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-matriks">➕ 1. Penjumlahan Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">1.1 Definisi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-umum">1.2 Rumus Umum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">1.3 Contoh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-penjumlahan-matriks">1.4 Sifat-Sifat Penjumlahan Matriks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengurangan-matriks">➖ 2. Pengurangan Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1 Definisi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2 Rumus Umum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3 Contoh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-pengurangan-matriks">2.4 Sifat-Sifat Pengurangan Matriks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matriks">✖️ 3. Perkalian Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-skalar-dengan-matriks">3.1 Perkalian Skalar dengan Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-dua-matriks">3.2 Perkalian Dua Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ilustrasi-matriks-2-times-2">3.3 Ilustrasi (Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.4 Contoh</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#maka-a-times-b-begin-pmatrix-1-5-2-7-1-6-2-8-3-5-4-7-3-6-4-8-end-pmatrix">Maka:
+$$
+A \times B =
+\begin{pmatrix}
+(1)(5)+(2)(7) &amp; (1)(6)+(2)(8) \
+(3)(5)+(4)(7) &amp; (3)(6)+(4)(8)
+\end{pmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-pmatrix-5-14-6-16-15-28-18-32-end-pmatrix">\begin{pmatrix}
+5+14 &amp; 6+16 \
+15+28 &amp; 18+32
+\end{pmatrix}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-perkalian-matriks">3.5 Sifat-Sifat Perkalian Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembagian-matriks-melalui-matriks-invers">➗ 4. Pembagian Matriks (Melalui Matriks Invers)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-pembagian-matriks">4.1 Konsep Pembagian Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-invers">4.2 Matriks Invers</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat">Syarat:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-invers-matriks-2-times-2">Rumus Invers Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-invers">4.3 Contoh Menghitung Invers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-b-cdot-b-1-i-begin-pmatrix-3-1-5-2-end-pmatrix-begin-pmatrix-2-1-5-3-end-pmatrix"><strong>Verifikasi:</strong> <span class="math notranslate nohighlight">\(B \cdot B^{-1} = I\)</span>
+$$
+\begin{pmatrix} 3 &amp; 1 \ 5 &amp; 2 \end{pmatrix}
+\begin{pmatrix} 2 &amp; -1 \ -5 &amp; 3 \end{pmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-pmatrix-6-5-3-3-10-10-5-6-end-pmatrix">\begin{pmatrix} 6-5 &amp; -3+3 \ 10-10 &amp; -5+6 \end{pmatrix}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penerapan-menyelesaikan-sistem-persamaan-linear">4.4 Penerapan: Menyelesaikan Sistem Persamaan Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-operasi-matriks">📋 5. Ringkasan Operasi Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aturan-dimensi">5.1 Aturan Dimensi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi">📚 Referensi</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

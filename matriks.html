@@ -195,8 +195,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-
-
 <li class="toctree-l1"><a class="reference internal" href="latihan.html">Tugas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas_Eigen_Value.html">Eigen Value</a></li>
 
@@ -442,19 +440,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-dua-matriks">3.2 Perkalian Dua Matriks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ilustrasi-matriks-2-times-2">3.3 Ilustrasi (Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.4 Contoh</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#maka-a-times-b-begin-pmatrix-1-5-2-7-1-6-2-8-3-5-4-7-3-6-4-8-end-pmatrix">Maka:
-$$
-A \times B =
-\begin{pmatrix}
-(1)(5)+(2)(7) &amp; (1)(6)+(2)(8) \
-(3)(5)+(4)(7) &amp; (3)(6)+(4)(8)
-\end{pmatrix}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-pmatrix-5-14-6-16-15-28-18-32-end-pmatrix">\begin{pmatrix}
-5+14 &amp; 6+16 \
-15+28 &amp; 18+32
-\end{pmatrix}</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-perkalian-matriks">3.5 Sifat-Sifat Perkalian Matriks</a></li>
 </ul>
 </li>
@@ -753,28 +738,25 @@ ce + dg &amp; cf + dh
 <section id="id4">
 <h2>3.4 Contoh<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>Diketahui:
-$<span class="math notranslate nohighlight">\(
-A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}, \quad
-B = \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}
-\)</span>$</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="maka-a-times-b-begin-pmatrix-1-5-2-7-1-6-2-8-3-5-4-7-3-6-4-8-end-pmatrix">
-<h1>Maka:
-$$
+$<span class="math notranslate nohighlight">\( A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}, \quad
+B = \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix} \)</span>$</p>
+<p>Maka:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 A \times B =
 \begin{pmatrix}
-(1)(5)+(2)(7) &amp; (1)(6)+(2)(8) \
+(1)(5)+(2)(7) &amp; (1)(6)+(2)(8) \\
 (3)(5)+(4)(7) &amp; (3)(6)+(4)(8)
-\end{pmatrix}<a class="headerlink" href="#maka-a-times-b-begin-pmatrix-1-5-2-7-1-6-2-8-3-5-4-7-3-6-4-8-end-pmatrix" title="Permalink to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="begin-pmatrix-5-14-6-16-15-28-18-32-end-pmatrix">
-<h1>\begin{pmatrix}
-5+14 &amp; 6+16 \
+\end{pmatrix}
+=
+\begin{pmatrix}
+5+14 &amp; 6+16 \\
 15+28 &amp; 18+32
-\end{pmatrix}<a class="headerlink" href="#begin-pmatrix-5-14-6-16-15-28-18-32-end-pmatrix" title="Permalink to this heading">#</a></h1>
-<p>\begin{pmatrix} 19 &amp; 22 \ 43 &amp; 50 \end{pmatrix}
-$$</p>
+\end{pmatrix}
+=
+\begin{pmatrix} 19 &amp; 22 \\ 43 &amp; 50 \end{pmatrix}
+\end{split}\]</div>
+</section>
 <section id="sifat-sifat-perkalian-matriks">
 <h2>3.5 Sifat-Sifat Perkalian Matriks<a class="headerlink" href="#sifat-sifat-perkalian-matriks" title="Permalink to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -848,10 +830,11 @@ B \cdot B^{-1} = B^{-1} \cdot B = I
 </section>
 <section id="contoh-menghitung-invers">
 <h2>4.3 Contoh Menghitung Invers<a class="headerlink" href="#contoh-menghitung-invers" title="Permalink to this heading">#</a></h2>
-<p>Diketahui:
-$<span class="math notranslate nohighlight">\(
+<p>Diketahui:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 B = \begin{pmatrix} 3 &amp; 1 \\ 5 &amp; 2 \end{pmatrix}
-\)</span>$</p>
+\end{split}\]</div>
 <p><strong>Langkah 1:</strong> Hitung determinan:
 $<span class="math notranslate nohighlight">\(
 \det(B) = (3)(2) - (1)(5) = 6 - 5 = 1
@@ -1372,19 +1355,6 @@ A =
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-dua-matriks">3.2 Perkalian Dua Matriks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ilustrasi-matriks-2-times-2">3.3 Ilustrasi (Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.4 Contoh</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#maka-a-times-b-begin-pmatrix-1-5-2-7-1-6-2-8-3-5-4-7-3-6-4-8-end-pmatrix">Maka:
-$$
-A \times B =
-\begin{pmatrix}
-(1)(5)+(2)(7) &amp; (1)(6)+(2)(8) \
-(3)(5)+(4)(7) &amp; (3)(6)+(4)(8)
-\end{pmatrix}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-pmatrix-5-14-6-16-15-28-18-32-end-pmatrix">\begin{pmatrix}
-5+14 &amp; 6+16 \
-15+28 &amp; 18+32
-\end{pmatrix}</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-perkalian-matriks">3.5 Sifat-Sifat Perkalian Matriks</a></li>
 </ul>
 </li>

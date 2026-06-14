@@ -532,39 +532,35 @@ Mulai lagi dengan Langkah 1 yang diterapkan pada matriks yang terdiri dari semua
 </ul>
 <p><em>Example</em></p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\begin{split}
-\begin{aligned}
+\[\begin{split}
+\begin{align}
 \begin{bmatrix}
-0 &amp; 0 &amp; -2 &amp; 0 &amp; 7 &amp; 12 \\
-2 &amp; 4 &amp; -10 &amp; 6 &amp; 12 &amp; 28 \\
-2 &amp; 4 &amp; -5 &amp; 6 &amp; -5 &amp; -1
-\end{bmatrix}\end{split}\\&amp; \xrightarrow{r_1 \leftrightarrow r_2}\\\begin{split}\begin{bmatrix}
-2 &amp; 4 &amp; -10 &amp; 6 &amp; 12 &amp; 28 \\
-0 &amp; 0 &amp; -2 &amp; 0 &amp; 7 &amp; 12 \\
-2 &amp; 4 &amp; -5 &amp; 6 &amp; -5 &amp; -1
-\end{bmatrix}\\[10pt]\end{split}\\&amp; \xrightarrow{\frac12 r_1}\\\begin{split}\begin{bmatrix}
-1 &amp; 2 &amp; -5 &amp; 3 &amp; 6 &amp; 14 \\
-0 &amp; 0 &amp; -2 &amp; 0 &amp; 7 &amp; 12 \\
-2 &amp; 4 &amp; -5 &amp; 6 &amp; -5 &amp; -1
-\end{bmatrix}\\[10pt]\end{split}\\&amp; \xrightarrow{r_3-2r_1}\\\begin{split}\begin{bmatrix}
 1 &amp; 2 &amp; -5 &amp; 3 &amp; 6 &amp; 14\\
-0 &amp; 0 &amp; -2 &amp; 0 &amp; 7 &amp; 12 \\
-0 &amp; 0 &amp; 5 &amp; 0 &amp; -17 &amp; -29
-\end{bmatrix}\\[10pt]\end{split}\\&amp; \xrightarrow{-\frac12 r_2}\\\begin{split}\begin{bmatrix}
-1 &amp; 2 &amp; -5 &amp; 3 &amp; 6 &amp; 14 \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; -\frac{7}{2} &amp; -6 \\
-0 &amp; 0 &amp; 5 &amp; 0 &amp; -17 &amp; -29
-\end{bmatrix}\\[10pt]\end{split}\\&amp; \xrightarrow{r_3+(-5)r_2}\\\begin{split}\begin{bmatrix}
-1 &amp; 2 &amp; -5 &amp; 3 &amp; 6 &amp; 14 \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; -\frac{7}{2} &amp; -6 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac12 &amp;1
-\end{bmatrix}\\[10pt]\end{split}\\&amp; \xrightarrow{2r_3}\\\begin{split}\begin{bmatrix}
-1 &amp; 2 &amp; -5 &amp; 3 &amp; 6 &amp; 14 \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; -\frac{7}{2} &amp;-6 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; -\frac{7}{2} &amp; -6\\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 2
 \end{bmatrix}
-\end{aligned}
-\end{split}\end{aligned}\end{align} \]</div>
+&amp;\xrightarrow{r_2 + \frac{7}{2}r_3}
+\begin{bmatrix}
+1 &amp; 2 &amp; -5 &amp; 3 &amp; 6 &amp; 14\\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 2
+\end{bmatrix}
+\\[10pt]
+&amp;\xrightarrow{r_1 - 6r_3}
+\begin{bmatrix}
+1 &amp; 2 &amp; -5 &amp; 3 &amp; 0 &amp; 2\\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 2
+\end{bmatrix}
+\\[10pt]
+&amp;\xrightarrow{r_1 + 5r_2}
+\begin{bmatrix}
+1 &amp; 2 &amp; 0 &amp; 3 &amp; 0 &amp; 7\\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 2
+\end{bmatrix}
+\end{align}
+\end{split}\]</div>
 <p>Matriks yang dihasilkan oleh eliminasi Gaussian dijamin berada dalam bentuk eselon baris, tetapi mungkin tidak berada dalam bentuk eselon baris tereduksi.</p>
 </section>
 <section id="definisi-eliminasi-gauss-jordan">
